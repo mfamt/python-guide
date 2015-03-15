@@ -5,27 +5,27 @@ references:
 ---
 
 
-```py
+~~~py
 import requests
 resp = requests.get('http://www.example.com')
-```
+~~~
 
 
 ## Getting the result
 
-```py
+~~~py
 import requests
 resp = requests.get('http://www.example.com')
 stuff = resp.text
-```
+~~~
 
 
 ## Passing parameters
 
-```py
+~~~py
 payload = {'user': 'dan', 'date': '2015-01-01'}
 resp = requests.get("http://www.example.com", params = payload)
 print(resp.url)
-```
+~~~
 
 

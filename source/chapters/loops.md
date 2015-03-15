@@ -19,14 +19,14 @@ Alternatively:
 Those who understand for-loops. And those who aren't programmers.
 
 
-```py
+~~~py
 for x in [1, 2, 3]:
     print(x)
 
 # 1
 # 2
 # 3
-```
+~~~
 
 
 ## For loop
@@ -36,7 +36,7 @@ for x in [1, 2, 3]:
 
 ## While loop
 
-```py
+~~~py
 x = 0
 while x < 3:
     print("x is now %s") % x
@@ -45,7 +45,7 @@ while x < 3:
 # x is now 0
 # x is now 1
 # x is now 2
-```
+~~~
 
 
 
@@ -65,7 +65,7 @@ While loop
 
 Nested for-loop
 
-```py
+~~~py
 for x in [1, 2, 3]:
     for y in ['a', 'b', 'c']:
         print("%s-%s") % (x, y)
@@ -79,13 +79,13 @@ for x in [1, 2, 3]:
 3-a
 3-b
 3-c
-```
+~~~
 
 
 
 Nested for-loop, string appending
 
-```py
+~~~py
 a = []
 for x in ["1", "2", "3"]:
     a.append(x)
@@ -93,4 +93,4 @@ for x in ["1", "2", "3"]:
         a.append(y)
 
 print(",".join(a))
-```
+~~~

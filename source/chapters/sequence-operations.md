@@ -5,7 +5,7 @@ references:
   - url: https://docs.python.org/3/library/stdtypes.html#common-sequence-operations
 tldr: |
   
-  ```py
+  ~~~py
   a = range(0, 10)
   print(len(a))
   # => 0
@@ -30,7 +30,7 @@ tldr: |
   # => 3
   print('mouth' in 'Cottonmouth')
   # => True
-  ```
+  ~~~
 ---
 
 

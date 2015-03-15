@@ -1,52 +1,52 @@
 ---
 title: Introduction to lists and mutable data
-order: 425
+order: 605
 references:
   - url: http://learnpythonthehardway.org/book/ex32.html
   - url: https://docs.python.org/3.4/tutorial/datastructures.html
   - url: https://developers.google.com/edu/python/lists
 tldr: |
 
-  ```py
-    ### Initializing a list
-    a = ['Hawn, Goldie', 'Newman, Paul', 42]    
-    ### Accessing an array's members
-    print(a[0])
-    # => Newman, Paul
-    print(a[0:2][1])
-    # => Newman, Paul
+  ~~~py
+  ### Initializing a list
+  a = ['Hawn, Goldie', 'Newman, Paul', 42]    
+  ### Accessing an array's members
+  print(a[0])
+  # => Newman, Paul
+  print(a[0:2][1])
+  # => Newman, Paul
 
-    ### Mutating a list
-    a[1] = 'Kurt Russell'
-    a[2] *= 2
-    print(a[1:3])
-    # => ['Kurt Russell', 84]
+  ### Mutating a list
+  a[1] = 'Kurt Russell'
+  a[2] *= 2
+  print(a[1:3])
+  # => ['Kurt Russell', 84]
 
-    ### Remove members of a list
-    print(a.pop())
-    # => 84
-    print(a)
-    # => ['Hawn, Goldie', 'Kurt Russell']
-    del(a[0])
-    print(a)
-    # =>  ['Kurt Russell']
-    a.pop()
-    print(a)
-    # => []
+  ### Remove members of a list
+  print(a.pop())
+  # => 84
+  print(a)
+  # => ['Hawn, Goldie', 'Kurt Russell']
+  del(a[0])
+  print(a)
+  # =>  ['Kurt Russell']
+  a.pop()
+  print(a)
+  # => []
 
-    ### Add to a list
-    a.append("stuff")
-    a.append("more stuff")
-    print(a)
-    # => ['stuff', 'more stuff']
-    a.reverse()
-    print(a[0])
-    # => more stuff
-    print(a.remove('stuff'))
-    # => None
-    print(a)
-    # => ['more stuff']
-  ```
+  ### Add to a list
+  a.append("stuff")
+  a.append("more stuff")
+  print(a)
+  # => ['stuff', 'more stuff']
+  a.reverse()
+  print(a[0])
+  # => more stuff
+  print(a.remove('stuff'))
+  # => None
+  print(a)
+  # => ['more stuff']
+  ~~~
 ---
 
 
@@ -60,9 +60,9 @@ Understanding the concept of lists will enable you to understand (and process) a
 
 Here's how to initialize a list containing two numbers:
 
-```py
+~~~py
 my_list = [42, -30.0]
-```
+~~~
 
 
 ### Accessing members of a list
@@ -91,9 +91,9 @@ print(big_list[2:4])
 ## The contents of a list
 
 
-```py
+~~~py
 x = ['a', 5, '42', 'z', 100, 300]
-```
+~~~
 
 
 
@@ -101,14 +101,14 @@ x = ['a', 5, '42', 'z', 100, 300]
 
 TK
 
-```py
+~~~py
 
 print(range(10))
 # range(10)
 
 print(list(range(10)))
 # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-```
+~~~
 
 
 ## Adding elements to a list

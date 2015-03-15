@@ -1,6 +1,8 @@
 ---
 title: String functions
 order: 200
+description: |
+  String objects come with a variety of functions that can be used to transform strings tk.
 references:
   - url: https://docs.python.org/3.4/library/string.html
   - url: https://docs.python.org/3.4/library/stdtypes.html#string-methods
@@ -9,9 +11,9 @@ references:
 
 #### 'replace'
 
-```py
+~~~py
 str.replace(old, new, _first_count)
-```
+~~~
 
 
 #### 'del'

@@ -40,7 +40,7 @@ For now, it's best to keep this axiom in mind:
 
 Within the body of a method, be sparing with empty lines, and try to not have more than one consecutive.
 
-```py
+~~~py
 
 if stuff_we_like == "hey":
   
@@ -48,24 +48,24 @@ if stuff_we_like == "hey":
     while true: 
         
         print("whats up")
-```
+~~~
 
 
-```py
+~~~py
 
 if stuff_we_like == "hey":
     while true:    
         print("whats up")
-```
+~~~
 
 
-```py
+~~~py
 
 def hello:
   print("hello")
 def goodbye:
   print("goodbye")
-```
+~~~
 
 
 #### No whitespace after a line
@@ -119,27 +119,27 @@ This only deals with the appearance of comments, not their actual content.
 
 ##### Separate URLs/filenames
 
-```py
+~~~py
 mydata = open("/project/data-source/documents/other-pages/2015/12/example.html", "r").read()
-```
+~~~
 
 
-```py
+~~~py
 myfile = "/project/data-source/documents/other-pages/2015/12/example.html"
 mydata = open(myfile, "r").read()
-```
+~~~
 
 ##### Nested functions/control
 
 
 
-```py
+~~~py
 while true:
     if stuff == 'a':
         if hello == 'b':
             print("Hello world on this")
         
-```
+~~~
 
 
 
@@ -195,11 +195,11 @@ Think of comments as footnotes or annotation
 
 Use a list to accumulate strings:
 
-```py
+~~~py
 my_big_string = []
 my_big_string.append("Hello")
 my_big_string.append("world,")
 my_big_string.append("I'm")
 my_big_string.append("fantastic.")
-```
+~~~
 

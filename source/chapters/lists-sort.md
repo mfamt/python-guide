@@ -1,11 +1,11 @@
 ---
 title: Sorting
-order: 410
+order: 610
 references:
   - url: https://wiki.python.org/moin/HowTo/Sorting
 tldr: |
 
-  ```py
+  ~~~py
   ### Using sorted(), which returns a list
   arr = [9, 42, 5]
   tup = (8, -50, 104)
@@ -36,7 +36,7 @@ tldr: |
   b.sort(key = int)
   print(b)
   # => ['5', '42', '1100']
-  ```
+  ~~~
 ---
 
 
@@ -64,7 +64,11 @@ print(x)
 
 ## Exercises
 
-```py
+~~~python
 print(sorted([4,3, '4', 'c', '11']))
-```
+~~~
 
+
+~~~bash
+print "hey $you"
+~~~

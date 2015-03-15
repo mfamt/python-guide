@@ -10,16 +10,16 @@ A bloated version of Peter Norvig's classic, "How to Write a Spelling Corrector"
 
 ## The `words` function
 
-```py
+~~~py
 import re
 def words(text): 
     return re.findall('[a-z]+', text.lower()) 
-```
+~~~
 
-```py
+~~~py
 import collections
 
-```
+~~~
 
 ## Rewriting the `edits1` function
 
@@ -27,7 +27,7 @@ import collections
 
 ### The `splits()` function
 
-```py
+~~~py
 def splits(word):
     return [(word[:i], word[i:]) for i in range(len(word) + 1)]
 
@@ -37,32 +37,32 @@ for x in splits('dog'):
 # => ('d', 'og')
 # => ('do', 'g')
 # => ('dog', '')
-```
+~~~
 
 
 #### The use of `range()`
 
-```py
+~~~py
 # range(len(word) + 1)
 # i.e.
 print(range(len('teh') + 1))
 # => range(0, 4)
-```
+~~~
 
 #### The `for`-loop
 
-```py
+~~~py
 for i in range(len('teh') + 1):
     print(i)
 # => 0
 # => 1
 # => 2
 # => 3
-```
+~~~
 
 #### Creating the tuples
 
-```py
+~~~py
 print(('teh'[:0], 'teh'[0:]))
 # => ('', 'teh')
 print(('teh'[:1], 'teh'[1:]))
@@ -71,34 +71,34 @@ print(('teh'[:2], 'teh'[2:]))
 # => ('te', 'h')
 print(('teh'[:3], 'teh'[3:]))
 # => ('teh', '')
-```
+~~~
 
 #### Rewriting `splits()` as a `for`-loop 
 
-```py
+~~~py
 def splits(word):
     arr = []
     for i in range(len(word) + 1):
         tup = (word[:i], word[i:])
         arr.append(tup)
     return arr
-```
+~~~
 
 
 
 ### The `deletes()` function
 
-```py
+~~~py
 def deletes(split_word):
     return [a + b[1:] for a, b in split_word if b]
 
 print(deletes(splits("teh")))
 # => ['eh', 'th', 'te']
-```
+~~~
 
 #### The `for`-loop
 
-```py
+~~~py
 for a in splits('teh'):
     if a[1]:
         print("Do something with:", a)
@@ -109,11 +109,11 @@ for a in splits('teh'):
 # => Do something with: ('t', 'eh')
 # => Do something with: ('te', 'h')
 # => Ignore: ('teh', '')
-```
+~~~
 
 #### The list concatenation
 
-```py
+~~~py
 a, b = ('', 'teh')
 print(a + b[1:])
 # => eh
@@ -123,12 +123,12 @@ print(a + b[1:])
 a, b = ('te', 'h')
 print(a + b[1:])
 # => te
-```
+~~~
 
 
 #### Rewriting `deletes()` without a list comprehension
 
-```py
+~~~py
 def deletes(split_word):
     arr = []
     for a, b in split_word:
@@ -136,25 +136,25 @@ def deletes(split_word):
             s = a + b[1:]
             arr.append(s)
     return arr
-```
+~~~
 
 
 
 ### The `transposes()` function
 
-```py
+~~~py
 def transposes(split_word):
     return [a + b[1] + b[0] + b[2:] for a, b in split_word if len(b) > 1]
 
 print(transposes(splits('teh')))
 # => ['eth', 'the']
-```
+~~~
 
 
 
 ### The `replaces()` function
 
-```py
+~~~py
 def replaces(split_word):
     return [a + c + b[1:] for a, b in split_word for c in 
       string.ascii_lowercase if b]
@@ -168,13 +168,13 @@ def replaces(split_word):
 #=>  'tex',
 #=>  'tey',
 #=>  'tez']      
-```
+~~~
 
 
 
 ### The `inserts()` function
 
-```py
+~~~py
 def inserts(split_word):
     return [a + c + b for a, b in split_word for c in string.ascii_lowercase]
 
@@ -188,7 +188,7 @@ print(splits('teh'))
 # => 'tehx',
 # => 'tehy',
 # => 'tehz']
-```
+~~~
 
 
 

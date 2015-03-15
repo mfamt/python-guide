@@ -5,9 +5,10 @@ set :site_deck, "Python practical tutorials and recipes"
 set :site_description, "A brief practical guide to Python aimed at data and computational journalism"
 
 
-activate :livereload
-activate :i18n, :mount_at_root => :en
 activate :directory_indexes
+activate :i18n, :mount_at_root => :en
+activate :livereload
+activate :syntax, :line_numbers => false
 
 ############################ assets
 set :markdown_engine, :kramdown

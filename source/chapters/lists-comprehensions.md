@@ -1,6 +1,6 @@
 ---
 title: List comprehensions
-order: 610
+order: 650
 references:
   - url: https://docs.python.org/3.4/tutorial/datastructures.html#list-comprehensions
   - url: http://effbot.org/zone/python-list.htm
@@ -10,20 +10,20 @@ references:
 
 ## Basic
 
-```py
+~~~py
 numbers = []
 for x in range(3):
     numbers.append(x * 10)
 
 # alternative
 numbers = [x * 10 for x in range(3)]
-```
+~~~
 
 
 ## With if statement
 
 
-```py
+~~~py
 numbers = []
 for x in range(4):
     if x >= 2:
@@ -31,23 +31,23 @@ for x in range(4):
 
 
 numbers = [x * 10 for x in range(4) if x >= 2]
-```
+~~~
 
 
 
 ## Nested-for-loop as a list comprehension
 
-```py
+~~~py
 numbers = []
 for x in [5, 6, 7]:
     for y in [-10, -20]:
         numbers.append(x * y)
-```
+~~~
 
 
-```py
+~~~py
 numbers = [x * y for x in [5, 6, 7] for y in [-10, -20]]
-```
+~~~
 
 
 ## Nested list comprehension

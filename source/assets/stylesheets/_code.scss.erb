@@ -1,0 +1,22 @@
+pre{
+  padding: 1.0em;
+}
+
+pre{
+  margin-bottom: 1.5em;
+}
+
+
+pre.output{
+  padding: 1.0em;
+  background: #eee;
+  border: thin dashed #888;
+  color: #777;
+}
+
+p, li {
+  code{
+
+  }
+}
+<%= Rouge::Themes::Github.render(:scope => '.highlight') %>
