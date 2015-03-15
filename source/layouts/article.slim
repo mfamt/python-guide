@@ -1,0 +1,9 @@
+= wrap_layout :layout do
+
+  div.container
+    article
+      div.content-meta
+        h1.title => current_page.data.title
+        div.description => make_markdown current_page.data.description
+
+      div.content-article => yield

@@ -1,5 +1,6 @@
 ---
 title: String functions
+order: 200
 references:
   - url: https://docs.python.org/3.4/library/string.html
   - url: https://docs.python.org/3.4/library/stdtypes.html#string-methods

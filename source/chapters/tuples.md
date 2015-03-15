@@ -5,7 +5,7 @@ references:
   - url: https://docs.python.org/3/library/stdtypes.html#tuple
 tldr: |
 
-  ```py
+  ~~~py
     ### Initializing a tuple
     a = ('Hawn, Goldie', 'Newman, Paul', 42)
     
@@ -32,7 +32,7 @@ tldr: |
     # => Raising Arizona
     print(c[-1][-1])
     # => ConAir
-  ```
+  ~~~
 ---
 
 
