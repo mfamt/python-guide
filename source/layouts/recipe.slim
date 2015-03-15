@@ -1,3 +1,9 @@
 = wrap_layout :layout
+  div.container
+    div.pagination
+      - if (c = carm_next_chapter)
+        div.next => link_to_content_resource(c)
+      - if (c = carm_prev_chapter)
+        div.prev => link_to_content_resource(c)
 
   => partial "/layouts/article", locals: { :article_content => yield }

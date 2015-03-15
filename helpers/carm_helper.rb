@@ -23,6 +23,11 @@ end
 def carm_chapters
   carm.chapters
 end
+
+def carm_categorized_recipes
+  carm.categorized_recipes
+end
+
 # returns:
 #   A ContentResource (Chapter) that comes after the given
 #   order_val
