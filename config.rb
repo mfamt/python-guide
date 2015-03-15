@@ -20,7 +20,8 @@ set :images_dir, 'assets/images'
 
 ############################# layout stuff
 set :layout, 'page'
-page "/chapters/*", :layout => "article"
+page "/recipes/*", :layout => "recipe"
+page "/chapters/*", :layout => "chapter"
 
 ############################# Build-specific configuration
 configure :build do

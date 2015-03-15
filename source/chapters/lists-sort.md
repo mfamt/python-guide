@@ -1,6 +1,6 @@
 ---
 title: Sorting
-order: 610
+ordernum: 610
 references:
   - url: https://wiki.python.org/moin/HowTo/Sorting
 tldr: |

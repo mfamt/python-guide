@@ -1,6 +1,6 @@
 ---
 title: Sequence operations
-order: 425
+ordernum: 425
 references:
   - url: https://docs.python.org/3/library/stdtypes.html#common-sequence-operations
 tldr: |

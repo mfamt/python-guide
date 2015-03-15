@@ -1,6 +1,6 @@
 ---
 title: Loops
-order: 510
+ordernum: 510
 references:
   - url: https://docs.python.org/3.4/tutorial/datastructures.html#list-comprehensions
   - url: http://effbot.org/zone/python-list.htm

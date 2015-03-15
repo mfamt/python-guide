@@ -1,7 +1,7 @@
 ---
 title: File I/O
 description: How to read and write to files
-order: 1100
+ordernum: 1100
 references: 
   - url: https://docs.python.org/3.4/tutorial/inputoutput.html
 introduction: |

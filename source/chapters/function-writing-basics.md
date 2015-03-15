@@ -1,6 +1,6 @@
 ---
 title: The basics of writing a function
-order: 350
+ordernum: 350
 ---
 
 

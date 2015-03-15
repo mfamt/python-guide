@@ -1,18 +1,19 @@
 ---
 title: Tuples
-order: 405
+ordernum: 405
 references:
   - url: https://docs.python.org/3/library/stdtypes.html#tuple
 tldr: |
 
   ~~~py
   ### Initializing a tuple
-  a = 'Hawn, Goldie', 'Newman, Paul', 42
+  a = 'Newman', 'Paul', 1925, 2008
+  print(type(a))    # <class 'tuple'>
   ### Accessing a tuple's members
-  print(a[0])       #   Hawn, Goldie
-  print(a[1])       #   Newman, Paul    
-  print(a[-1])      #   42
-  print(a[-2])      #   Newman, Paul
+  print(a[0])       #   Newman
+  print(a[1])       #   Paul
+  print(a[-1])      #   2008
+  print(a[-2])      #   1925
   
   ### Accessing slices of a tuple
   b = (1, 2, 3, 4, 5, 6)
@@ -23,15 +24,16 @@ tldr: |
   print(b[3:5:2])  #   (4,)
 
   ### Concatenating tuples
-  c = "8mm",
-  d = 'Adaptation', 'Raising Arizona'
-  e = c + d
-  print(e)  #  ('8mm', 'Adaptation', 'Raising Arizona')
+  c =  'The Rock', 'Stanley' 
+  d = 'Adaptation', 'Charlie'
+  e = c + d   
+  print(e)  #  ('The Rock', 'Stanley', 'Adaptation', 'Charlie')
 
   ## Nested tuples
-  f = ('Face/Off', ('The Rock', 'Con Air'))
-  print(f[1])         #    ('The Rock', 'Con Air')
-  print(c[-1][-1])    #    Con Air
+  f = (c, d)
+  print(f)          #  (('The Rock', 'Stanley'), ('Adaptation', 'Charlie'))
+  print(f[1])       #  ('Adaptation', 'Charlie')
+  print(f[-1][-1])  #   Charlie
   ~~~
 ---
 

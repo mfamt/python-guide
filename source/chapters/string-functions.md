@@ -1,6 +1,6 @@
 ---
 title: String functions
-order: 200
+ordernum: 270
 description: |
   String objects come with a variety of functions that can be used to transform strings tk.
 references:

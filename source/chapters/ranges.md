@@ -1,6 +1,6 @@
 ---
 title: Ranges
-order: 410
+ordernum: 410
 references:
   - url: https://docs.python.org/3/library/stdtypes.html#ranges
 tldr: |
