@@ -6,6 +6,10 @@
 @import "bootstrap-compass";
 @import "bootstrap";
 
+// import partials
 @import "partials/footer";
 @import "partials/header";
+
+// import pages
+@import "pages/contents-page"
 

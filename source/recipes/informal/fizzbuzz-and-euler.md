@@ -8,7 +8,6 @@ references:
     title: "Why Can't Programmers...Program?"
   - url: http://imranontech.com/2007/01/24/using-fizzbuzz-to-find-developers-who-grok-coding/
     title: Using FizzBuzz to Find Developers who Grok Coding
-
 ---
 
 

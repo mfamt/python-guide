@@ -1,49 +1,52 @@
 ---
 title: Contents
 ---
+div.contents-page
 
-
-div.row
-  div.col-sm-6
-    div.chapters
-      h3 Chapters
-      - carm_chapters.each do |chapter|
-        div.chapter
-          div.title
-            => chapter.ordernum
-            => link_to_content_resource chapter
-            span.description
-              => chapter.description
-
-
-  div.col-sm-6
-    div.categorized-recipes
-      h3 Recipes
-      - carm_categorized_recipes.each_pair do |cat, recipes|
-        div.category
-          h4 #{{cat.capitalize}}
-          div.recipes
-            - recipes.each do |recipe|
-              div.recipe
-                div.title
-                  => recipe.ordernum
-                  => link_to_content_resource recipe
-                  span.description
-                    => recipe.description
-
-
-hr
-
-h2 Detailed listing
-
-p The following is a listing of each chapter but with the TLDR sections listed. The rule of thumb is: if you can read the TLDR section and understand everything, you probably don't need to read the chapter.
-
-- carm_chapters.each do |chapter|
   div.row
+    div.col-sm-6
+      div.chapters
+        h3 Chapters
+        - carm_chapters.each do |chapter|
+          div.chapter
+            div.title
+              => chapter.ordernum
+              => link_to_content_resource chapter
+              span.description
+                => chapter.description
 
-    div.col-sm-5
-      h4.title => link_to chapter.title, chapter.url
-      div.description => chapter.description
-    div.col-sm-7
-      div.tldr => make_markdown chapter.tldr
+
+    div.col-sm-6
+      div.categorized-recipes
+        h3 Recipes
+        - carm_categorized_recipes.each_pair do |cat, recipes|
+          div.category
+            h4 #{{cat.capitalize}}
+            div.recipes
+              - recipes.each do |recipe|
+                div.recipe
+                  div.title
+                    => recipe.ordernum
+                    => link_to_content_resource recipe
+                    span.description
+                      => recipe.description
+
+
+  hr
+
+  h2 Detailed listing
+
+  p The following is a listing of each chapter but with the TLDR sections listed. The rule of thumb is: if you can read the TLDR section and understand everything, you probably don't need to read the chapter.
+
+  div.detailed-chapters
+    - carm_chapters.each do |chapter|
+      div.chapter
+        h4.title => link_to chapter.title, chapter.url
+        div.row
+          div.col-sm-4
+            div.meta
+              div.description => chapter.description
+              p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, voluptatem laborum consequuntur sapiente esse dolorem! Dolores fugiat enim, quo laudantium, exercitationem doloremque dicta, in adipisci reprehenderit aut inventore, itaque provident.
+          div.col-sm-8
+            div.tldr => make_markdown chapter.tldr
 
