@@ -7,12 +7,9 @@ tldr: |
   
   ~~~py
   a = range(0, 10)
-  print(len(a))
-  # => 0
-  print(min(a))
-  # => 0
-  print(max(a))
-  # => 9
+  print(len(a))       #  10
+  print(min(a))       #   0
+  print(max(a))       #   9
   b = 'Black Mamba', 'Cottonmouth', 'Copperhead', 'Cottonmouth'
   print('Cottonmouth' in b)
   # => True
