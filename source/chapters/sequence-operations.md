@@ -1,5 +1,5 @@
 ---
-title: Sequence operations
+title: Sequence Operations
 ordernum: 425
 references:
   - url: https://docs.python.org/3/library/stdtypes.html#common-sequence-operations

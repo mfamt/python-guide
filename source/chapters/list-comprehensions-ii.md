@@ -1,5 +1,5 @@
 ---
-title: List comprehensions and logic
+title: List Comprehensions and Logic
 ordernum: 655
 references:
   - url: http://norvig.com/spell-correct.html

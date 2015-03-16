@@ -2,25 +2,34 @@
 title: Contents
 ---
 
-- carm_chapters.each do |chapter|
-  div.chapter
-    div.title
-      => chapter.ordernum
-      => link_to_content_resource chapter
-    div.description
-      => chapter.description
 
-- carm_categorized_recipes.each_pair do |cat, recipes|
-  div.category
-    h4 => cat
-    div.recipes
-      - recipes.each do |recipe|
-        div.recipe
+div.row
+  div.col-sm-6
+    div.chapters
+      h3 Chapters
+      - carm_chapters.each do |chapter|
+        div.chapter
           div.title
-            => recipe.ordernum
-            => link_to_content_resource recipe
-          div.description
-            => recipe.description
+            => chapter.ordernum
+            => link_to_content_resource chapter
+            span.description
+              => chapter.description
+
+
+  div.col-sm-6
+    div.categorized-recipes
+      h3 Recipes
+      - carm_categorized_recipes.each_pair do |cat, recipes|
+        div.category
+          h4 #{{cat.capitalize}}
+          div.recipes
+            - recipes.each do |recipe|
+              div.recipe
+                div.title
+                  => recipe.ordernum
+                  => link_to_content_resource recipe
+                  span.description
+                    => recipe.description
 
 
 hr
@@ -32,9 +41,9 @@ p The following is a listing of each chapter but with the TLDR sections listed. 
 - carm_chapters.each do |chapter|
   div.row
 
-    div.col-sm-4
-      div.title => link_to chapter.title, chapter.url
+    div.col-sm-5
+      h4.title => link_to chapter.title, chapter.url
       div.description => chapter.description
-    div.col-sm-8
+    div.col-sm-7
       div.tldr => make_markdown chapter.tldr
 

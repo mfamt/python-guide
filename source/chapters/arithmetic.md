@@ -1,4 +1,4 @@
 ---
-title: Doing arithmetic
+title: Arithmetic in Python
 ordernum: 210
 ---

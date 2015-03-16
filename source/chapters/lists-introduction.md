@@ -1,5 +1,5 @@
 ---
-title: Introduction to lists and mutable data
+title: Introduction to Lists and Mutable Data
 ordernum: 605
 references:
   - url: http://learnpythonthehardway.org/book/ex32.html

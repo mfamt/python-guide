@@ -1,5 +1,5 @@
 ---
-title: "If-else statements"
+title: "Conditional Branching with If/Else Statements"
 ordernum: 560
 references:
   - url: https://docs.python.org/3.4/tutorial/datastructures.html#list-comprehensions

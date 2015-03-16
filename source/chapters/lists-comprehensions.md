@@ -1,5 +1,5 @@
 ---
-title: Introduction to list comprehensions
+title: Introduction to List Comprehensions
 ordernum: 650
 references:
   - url: https://docs.python.org/3.4/tutorial/datastructures.html#list-comprehensions

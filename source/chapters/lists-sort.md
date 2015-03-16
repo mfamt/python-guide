@@ -1,5 +1,5 @@
 ---
-title: Sorting
+title: Sorting Sequences
 ordernum: 610
 references:
   - url: https://wiki.python.org/moin/HowTo/Sorting

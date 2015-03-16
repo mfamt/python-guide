@@ -1,5 +1,5 @@
 ---
-title: The basics of writing a function
+title: How to Write a Function
 ordernum: 350
 ---
 
