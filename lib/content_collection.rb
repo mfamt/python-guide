@@ -1,38 +1,44 @@
-require 'lib/content_resource'
+require 'lib/content_article'
 class ContentCollection
   # expects arr to be a bunch of resources
-  def initialize(arr)
-    @items = arr.map{ |a| ContentResource(a) }.sort_by{|a| a.ordernum.to_i }
+  attr_reader :slug, :title
+  def initialize(the_slug, arr)
+    @slug = the_slug
+    @title = @slug
+    @items = arr
   end
 
-
-  def next_resource(r)
-    idx = get_index_of_content(r)
-    @items[idx + 1]
+  def articles
+    @items
   end
 
-  def prev_resource(r)
+  def next_article(r)
     idx = get_index_of_content(r)
-    @items[idx - 1]
+    articles[idx + 1]
+  end
+
+  def prev_article(r)
+    idx = get_index_of_content(r)
+    articles[idx - 1]
   end
 
   ### make it enumerable
   def each
     return enum_for(:each) unless block_given?
-    @items.each do |i|
+    articles.each do |i|
       yield i
     end
   end
 
   def find(*args, &blk)
-    @items.find(*args, &blk)
+    articles.find(*args, &blk)
   end
   def index(*args, &blk)
-    @items.index(*args, &blk)
+    articles.index(*args, &blk)
   end
 
   def [](*args)
-    @items[*args]
+    articles[*args]
   end
 
   private
@@ -42,10 +48,6 @@ class ContentCollection
 end
 
 
-def ContentCollection(arr_resources, *terms)
-  arrterms = Array(terms)
-  regexterms = arrterms.map{|t| Regexp.escape(t) }.join('|')
-  arr = arr_resources.select{ |r| r.path =~ /(?:#{regexterms})\// }
-
-  ContentCollection.new(arr)
+def ContentCollection(the_slug, arr)
+  ContentCollection.new(the_slug, arr)
 end

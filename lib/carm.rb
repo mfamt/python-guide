@@ -1,103 +1,89 @@
-require 'lib/content_resource'
+require 'lib/content_article'
 require 'lib/content_collection'
+require 'lib/content_scope'
 
 class Carm
-  RECIPE_CATS = %w(informal practical project)
   def initialize(sitemap)
     @site_resources = sitemap.resources
-  end
-
-  def chapters
-    resources('chapters')
-  end
-
-  def categorized_recipes
-    RECIPE_CATS.inject({}) do |h, k|
-      h[k] = self.send("#{k}_recipes".to_sym)
-
-      h
-    end
-  end
-
-  RECIPE_CATS.each do |r|
-    define_method "#{r}_recipes" do
-      resources(r)
-    end
-  end
-
-  def resources(scope = nil)
-    if scope.present?
-      ContentCollection(@site_resources, scope)
-    else
-      ContentCollection(@site_resources, 'chapters', 'recipes')
-    end
+    @content_articles = formulate_content_articles
   end
 
 
-  def next_resource(val)
-    r = get_content_resource(val)
-    coll = get_content_collection_for_resource(r)
-    coll.next_resource(r)
+  def lessons
+    ContentScope('lessons', @content_articles.select{|r| r.url =~ /\/content\/lessons\// })
   end
 
-  def prev_resource(val)
-    r = get_content_resource(val)
-    coll = get_content_collection_for_resource(r)
-    coll.prev_resource(r)
+  def recipes
+    ContentScope('recipes', @content_articles.select{|r| r.url =~ /\/content\/recipes\// })
   end
 
-  def next_chapter(val)
-    next_resource(val)
+
+  def scopes
+    [lessons, recipes]
   end
 
-  def prev_chapter(val)
-    prev_resource(val)
+
+  def next_article(val)
+    r = get_content_article(val)
+    coll = get_content_collection_for_article(r)
+    coll.next_article(r)
   end
 
-  def get_content_resource(val, scope = nil)
+  def prev_article(val)
+    r = get_content_article(val)
+    coll = get_content_collection_for_article(r)
+    coll.prev_article(r)
+  end
+
+  def get_content_article(val)
     case val
-    when ContentResource
+    when ContentArticle
       val
     when Middleman::Sitemap::Resource
-      ContentResource(val)
+      ContentArticle(val)
     else
-      # assume it's a string path or ordernum
+      # assume it's a string path
       if val =~ /\/\w+/ # it's a path
-        get_content_resource_by_path(val)
+        get_content_article_by_path(val)
       else
-        get_content_resource_by_ordernum(val, scope)
+        raise StandardError, '#get_content_article() needs a useful identifier'
       end
     end
   end
 
 
   def self.slugify(path)
-    ContentResource.slugify(path)
+    ContentArticle.slugify(path)
   end
 
   private
-    # assuming :chapters is an Array
+    # assuming :lessons is an Array
     # returns index of chapter in Array
 
 
-    def get_content_collection_for_resource(val)
-      r = get_content_resource(val)
-      resources(r.scope)
+    def formulate_content_articles
+      @site_resources.select{|r| r.url =~ /content/ }.
+        reject{|c| c.path =~ /index.html/ }.
+        map{|c| ContentArticle(c) }.
+        sort_by{ |a| a.ordernum.to_i }
     end
 
-    def get_content_resource_by_ordernum(num, scope = nil)
-      onum = num.to_i
+    def get_content_collection_for_article(val)
+      r = get_content_article(val)
+      s = get_content_scope_for_article(r)
 
-      if scope.present?
-        resources(scope).find{|c| c.ordernum == onum }
-      else
-        resources.find{|c| c.ordernum == onum }
-      end
+      s.get_collection_for_article(r)
     end
 
-    def get_content_resource_by_path(path)
-      pslug = Carm.slugify(path)
+    def get_content_scope_for_article(val)
+      r = get_content_article(val)
 
-      chapters.find{|c| c.slug == pslug }
+      self.scopes.find{|c| c.slug == r.scope_slug}
+    end
+
+    def get_content_article_by_path(path)
+      pslug = ContentArticle.slugify(path)
+
+      lessons.find{|c| c.slug == pslug }
     end
 end

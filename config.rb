@@ -13,7 +13,7 @@ activate :i18n, :mount_at_root => :en
 activate :livereload
 activate :syntax, :line_numbers => false
 
-############################ assets
+######### assets
 set :markdown_engine, :kramdown
 set :slim, :pretty => true
 set :trailing_slash, true
@@ -21,10 +21,9 @@ set :css_dir, 'assets/stylesheets'
 set :js_dir, 'assets/javascripts'
 set :images_dir, 'assets/images'
 
-############################# layout stuff
+######### layout stuff
 set :layout, 'page'
-page "/recipes/*", :layout => "content"
-page "/chapters/*", :layout => "content"
+page "/content/*", :layout => "content"
 
 ############################# Build-specific configuration
 configure :build do

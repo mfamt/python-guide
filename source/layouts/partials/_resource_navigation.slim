@@ -2,13 +2,13 @@ div.navigation
   div.scope
     => link_to_contents
     ' |
-    => link_to_resource_scope(current_content_resource)
-  - if (c = carm_next_chapter)
+    => link_to_article_collection(current_content_article)
+  - if (c = carm_next_article)
     div.next
       strong> Next:
-      = link_to_content_resource(c)
+      = link_to_content_article(c)
 
-  - if (c = carm_prev_chapter)
+  - if (c = carm_prev_article)
     div.prev
       strong> Previous:
-      => link_to_content_resource(c)
+      => link_to_content_article(c)
