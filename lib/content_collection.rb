@@ -19,7 +19,7 @@ class ContentCollection
 
   def prev_article(r)
     idx = get_index_of_content(r)
-    articles[idx - 1]
+    idx > 0 ? articles[idx - 1] : nil
   end
 
   ### make it enumerable

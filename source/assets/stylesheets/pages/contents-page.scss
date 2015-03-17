@@ -1,6 +1,9 @@
 .detailed-lessons{
-  .chapter{
+  .collection > .title{
+    text-align: center;
+  }
 
+  .lesson{
     .tldr code{
       font-size: smaller;
     }

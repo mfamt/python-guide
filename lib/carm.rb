@@ -3,6 +3,7 @@ require 'lib/content_collection'
 require 'lib/content_scope'
 
 class Carm
+  attr_reader :content_articles
   def initialize(sitemap)
     @site_resources = sitemap.resources
     @content_articles = formulate_content_articles
@@ -62,7 +63,7 @@ class Carm
 
 
     def formulate_content_articles
-      @site_resources.select{|r| r.url =~ /content/ }.
+      @site_resources.select{|r| r.url =~ /\/content\// }.
         reject{|c| c.path =~ /index.html/ }.
         map{|c| ContentArticle(c) }.
         sort_by{ |a| a.ordernum.to_i }

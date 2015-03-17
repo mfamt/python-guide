@@ -19,41 +19,43 @@ div.contents-page
                   => article.description
 
 
-  /   div.col-sm-6
-  /     div.categorized-recipes
-  /       h3 Recipes
-  /       - carm_recipes.each_pair do |cat, recipes|
-  /         div.category
-  /           h4 #{{cat.capitalize}}
-  /           div.recipes
-  /             - recipes.each do |recipe|
-  /               div.recipe
-  /                 div.title
-  /                   => recipe.ordernum
-  /                   => link_to_content_article recipe
-  /                   span.description
-  /                     => recipe.description
+    div.col-sm-6
+      div.recipes
+        h3 Recipes
+        - carm_recipes.each_collection do |col|
+          div.collection
+            h4 = col.title
+            - col.articles.each do |article|
+              div.article
+                div.title
+                  => article.ordernum
+                  => link_to_content_article article
+                span.description
+                  => article.description
 
 
   / hr
 
-  / h2 Detailed listing
+  h2 Detailed listing
 
-  / p The following is a listing of each chapter but with the TLDR sections listed. The rule of thumb is: if you can read the TLDR section and understand everything, you probably don't need to read the chapter.
+  p The following is a listing of each lesson but with the TLDR sections listed. The rule of thumb is: if you can read the TLDR section and understand everything, you probably don't need to read the lesson.
 
-  / div.detailed-lessons
-  /   - carm_lessons.each do |chapter|
-  /     div.chapter
-  /       h4.title => link_to chapter.title, chapter.url
-  /       div.row
-  /         div.col-sm-4
-  /           div.meta
-  /             div.description
-  /               strong => chapter.description
-  /             - if chapter.takeaway.present?
-  /               p = make_markdown chapter.takeaway
-  /             - else
-  /               p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, voluptatem laborum consequuntur sapiente esse dolorem! Dolores fugiat enim, quo laudantium, exercitationem doloremque dicta, in adipisci reprehenderit aut inventore, itaque provident.
-  /         div.col-sm-8
-  /           div.tldr = make_markdown chapter.tldr
+  div.detailed-lessons
+    - carm_lessons.each_collection do |coll|
+      div.collection
+        h3.title => coll.title
+        - coll.articles.each do |lesson|
+          div.lesson
+            h4.title => link_to lesson.title, lesson.url
+            div.row
+              div.col-sm-4
+                div.meta
+                  div.description
+                    strong => lesson.description
+                  - if lesson.takeaway.present?
+                    p = make_markdown lesson.takeaway
+                  - else
+                    p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, voluptatem laborum consequuntur sapiente esse dolorem! Dolores fugiat enim, quo laudantium, exercitationem doloremque dicta, in adipisci reprehenderit aut inventore, itaque provident.
+              div.col-sm-8
+                div.tldr = make_markdown lesson.tldr
 

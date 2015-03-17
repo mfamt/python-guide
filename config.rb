@@ -1,4 +1,5 @@
 require 'lib/carm'
+Slim::Engine.disable_option_validator!
 
 set :mfamt_topic, 'Python'
 set :mfamt_title, "Move Fast and Make Things in #{mfamt_topic}"
@@ -16,6 +17,7 @@ activate :syntax, :line_numbers => false
 ######### assets
 set :markdown_engine, :kramdown
 set :slim, :pretty => true
+
 set :trailing_slash, true
 set :css_dir, 'assets/stylesheets'
 set :js_dir, 'assets/javascripts'
