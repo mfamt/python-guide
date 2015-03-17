@@ -1,0 +1,8 @@
+= wrap_layout :layout
+
+  div.container
+    = partial "/layouts/partials/resource_navigation"
+
+
+
+  => partial "/layouts/article", locals: { :article_content => yield }

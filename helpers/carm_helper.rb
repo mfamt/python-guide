@@ -13,10 +13,20 @@ def get_content_resource(val)
 end
 
 
+def link_to_contents
+  link_to "Contents", "/contents/"
+end
+
 def link_to_content_resource(val)
   c = get_content_resource(val)
 
   link_to c.title, c.url
+end
+
+def link_to_resource_scope(val)
+  c = get_content_resource(val)
+
+  link_to c.scope_title, c.scope_url
 end
 
 ########

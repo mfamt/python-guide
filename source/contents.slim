@@ -45,8 +45,12 @@ div.contents-page
         div.row
           div.col-sm-4
             div.meta
-              div.description => chapter.description
-              p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, voluptatem laborum consequuntur sapiente esse dolorem! Dolores fugiat enim, quo laudantium, exercitationem doloremque dicta, in adipisci reprehenderit aut inventore, itaque provident.
+              div.description
+                strong => chapter.description
+              - if chapter.takeaway.present?
+                p = make_markdown chapter.takeaway
+              - else
+                p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, voluptatem laborum consequuntur sapiente esse dolorem! Dolores fugiat enim, quo laudantium, exercitationem doloremque dicta, in adipisci reprehenderit aut inventore, itaque provident.
           div.col-sm-8
-            div.tldr => make_markdown chapter.tldr
+            div.tldr = make_markdown chapter.tldr
 

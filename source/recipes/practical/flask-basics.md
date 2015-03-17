@@ -11,7 +11,7 @@ references:
 
 Taken directly from Flask's [Quickstart guide](http://flask.pocoo.org/docs/0.10/quickstart/#quickstart)
 
-```py
+~~~py
 from flask import Flask
 app = Flask(__name__)
 
@@ -21,40 +21,40 @@ def hello_world():
 
 if __name__ == '__main__':
     app.run()
-```
+~~~
 
 
 ## Adding a new route
 
-```py
+~~~py
 @app.route('/easter/egg')
 def egg_page():
     return 'You found the easter egg page!'
-```
+~~~
 
 ## Adding a variable route
 
-```py
+~~~py
 @app.route('/love/')
 @app.route('/love/<name>')
 def love_page(name = 'you'):
     return 'I love %s' % name
-```
+~~~
 
 
 ## Adding a 404
 
-```py
+~~~py
 @app.errorhandler(404)
 def page_not_found(error):
     return "Wrong page"
-```
+~~~
 
 
 ## All together
 
 
-```py
+~~~py
 from flask import Flask
 app = Flask(__name__)
 
@@ -78,4 +78,4 @@ def page_not_found(error):
 
 if __name__ == '__main__':
     app.run()
-```
+~~~

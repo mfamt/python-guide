@@ -1,8 +1,11 @@
 require 'lib/carm'
 
-set :site_title, "Move Fast and Make Things in Python"
+set :mfamt_topic, 'Python'
+set :mfamt_title, "Move Fast and Make Things in #{mfamt_topic}"
+set :site_title, config[:mfamt_title]
+
 set :site_deck, "Python practical tutorials and recipes"
-set :site_description, "A brief practical guide to Python aimed at data and computational journalism"
+set :site_description, "A practical guide to Python aimed at data and computational journalism"
 
 
 activate :directory_indexes
@@ -20,8 +23,8 @@ set :images_dir, 'assets/images'
 
 ############################# layout stuff
 set :layout, 'page'
-page "/recipes/*", :layout => "recipe"
-page "/chapters/*", :layout => "chapter"
+page "/recipes/*", :layout => "content"
+page "/chapters/*", :layout => "content"
 
 ############################# Build-specific configuration
 configure :build do

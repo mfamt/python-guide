@@ -16,7 +16,7 @@ references:
 
 ### With a really verbose `for`-loop
 
-```py
+~~~py
 total = 0
 for x in range(1000):
     if x % 3 == 0:
@@ -27,33 +27,45 @@ for x in range(1000):
         total += 0
 
 print(total) 
-```
+~~~
 
 ### More compact logic
 
-```py
+~~~py
 total = 0
 for x in range(1000):
     if x % 3 == 0 or x % 5 == 0:
         total += x
 print(total)
-```
+~~~
 
+
+### Using a function
+
+~~~py
+def foo(x):
+    if x % 3 == 0 or x % 5 == 0:
+        return x
+    else:
+        return 0
+
+print(sum(foo(x) for x in range(1000)))
+~~~
 
 
 ### Using a list comprehension and `sum`
 
-```py
-print(sum([x for x in range(1000) if x % 3 == 0 or x % 5 == 0]))
-```
+~~~py
+print(sum(x for x in range(1000) if x % 3 == 0 or x % 5 == 0))
+~~~
 
 
 
 ### Using `lambda`, `filter`, and `sum`
 
-```py
+~~~py
 print(sum(filter(lambda x: x % 3 == 0 or x % 5 == 0, range(1000))))
-```
+~~~
 
 
 
@@ -66,7 +78,7 @@ via Imran Ghory, [Using FizzBuzz to Find Developers who Grok Coding](http://imra
 
 Common mistake:
 
-```py
+~~~py
 for x in range(100):
     if x % 3 == 0:
         print('Fizz')
@@ -76,12 +88,12 @@ for x in range(100):
         print('FizzBuzz')
     else:
         print(x)
-```
+~~~
 
 
 Remember how the control will flow; all numbers divisible by `15` are _also_ divisible by `3` and `5`. Thus, the `x % 15 == 0` needs to come first:
 
-```py
+~~~py
 for x in range(100):
     if x % 15 == 0:
         print('FizzBuzz')
@@ -91,7 +103,7 @@ for x in range(100):
         print('Buzz')
     else:
         print(x)
-```
+~~~
 
 
 
