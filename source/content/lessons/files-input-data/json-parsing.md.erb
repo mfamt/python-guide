@@ -21,8 +21,18 @@ tldr: |
 ---
 
 
+## TK
 
+Testing out highlighting
 
+~~~py
+print(json.loads('{"a": 42, "b": "dog"}'))  # {'a': 42, 'b': 'dog'}
+
+### convenience method load()
+tweetfile = open("/tmp/tweet.json")
+tweetobj = json.load(tweetfile)
+print(tweetobj['user']['screen_name'])     #  twitterapi
+~~~
 
 ## Parsing a Tweet
 
@@ -30,4 +40,5 @@ Taking the example Tweet JSON representation from Twitter's [API documentation f
 
 
 <%= brief_codepiece 'data-samples/apis/tweet.json' %>
+
 

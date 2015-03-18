@@ -35,8 +35,8 @@ lessons:
       description: |
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident accusamus fugiat, ut perspiciatis vitae maiores nobis. Fugiat, suscipit dolores error cupiditate velit provident sapiente laudantium, tenetur accusantium enim labore quia.
 
-    build-and-design:
-      title: "Building and Designing"
+    design-and-implementation:
+      title: "Design and Implementation"
       description: |
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, quaerat vitae aperiam aliquam aut corporis sequi repudiandae hic libero alias et molestiae, est neque, delectus esse debitis recusandae magni id.
 
@@ -48,26 +48,26 @@ recipes:
     Let's make some stuff
   collections:
 
-    informal:
-      title: "Informal Exploration"
+          informal:
+            title: "Informal Exploration"
 
-    practical:
-      title: "Little Practical Things"
+          practical:
+            title: "Little Practical Things"
 
-    multimedia:
-      title: "Graphics and Multimedia"
-
-
-    apis-and-scraping:
-      title: "APIs and Scraping Stuff"
+          multimedia:
+            title: "Graphics and Multimedia"
 
 
-    data-analysis:
-      title: "Data Analysis"
+          apis-and-scraping:
+            title: "APIs and Scraping Stuff"
 
 
-    web-app:
-      title: "Web Applications"
+          data-analysis:
+            title: "Data Analysis"
 
-    projects:
-      title: "Real Data Projects"
+
+          web-app:
+            title: "Web Applications"
+
+          projects:
+            title: "Real Data Projects"

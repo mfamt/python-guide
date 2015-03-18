@@ -1,5 +1,5 @@
 ---
-title: Introduction to Lists and Mutable Data
+title: Introduction to Lists
 ordernum: 605
 references:
   - url: http://learnpythonthehardway.org/book/ex32.html
@@ -47,6 +47,12 @@ tldr: |
   # => None
   print(a)
   # => ['more stuff']
+
+  ### Concatenate lists
+  a.append(['appended'])
+  a.extend(['extended'])
+  print(a)                  #  ['more stuff', ['appended'], 'extended']
+  a.extend(42)              #  TypeError: 'int' object is not iterable
   ~~~
 ---
 
