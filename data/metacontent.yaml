@@ -69,5 +69,5 @@ recipes:
     web-app:
       title: "Web Applications"
 
-    project:
-      title: "Big Real-World Projects"
+    projects:
+      title: "Real Data Projects"

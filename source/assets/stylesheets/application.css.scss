@@ -11,5 +11,16 @@
 @import "partials/header";
 
 // import pages
-@import "pages/contents-page"
+@import "pages/contents-page";
 
+
+
+a:link, a:visited{
+  text-decoration: underline;
+}
+
+h1,h2,h3,h4,h5,h6{
+  a:link, a:visited{
+    text-decoration: none;
+  }
+}

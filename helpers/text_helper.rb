@@ -4,7 +4,13 @@ def make_markdown(str)
 end
 
 
-def include_code_snippet(fpath, opts = {})
+def brief_codepiece(fpath, opts = {})
+  xopts = opts.merge({:display_class => 'brief'})
+
+  codepiece(fpath, xopts)
+end
+
+def codepiece(fpath, opts = {})
   fname = File.join("code/", fpath)
   raw_content = get_raw_content_from_file(fname)
   splits = raw_content.split(/^# ----$/)
@@ -14,8 +20,25 @@ def include_code_snippet(fpath, opts = {})
     polished_content = raw_content
   end
 
- partial "/layouts/partials/code_snippet",
-   locals: { content: polished_content, path: fname, url: fname }
+  # determine language
+  lang = opts[:lang] || case File.extname(fpath)
+  when /rb/   ; 'ruby'
+  when /py$/  ; 'python'
+  when /sh$/  ; 'shell'
+  when /html/ ; 'html'
+  when /xml/  ;  'xml'
+  when /css/  ;  'css'
+  when /json/ ;  'json'
+  when /yaml/ ;  'yaml'
+  else
+    nil
+  end
+
+  display_class = opts[:display_class]
+
+  partial "/layouts/partials/codepiece",
+    locals: { content: polished_content, display_class: display_class,
+              lang: lang, path: fname, url: fname, }
 
 #  partial "/layouts/partials/code_snippet",
 #    locals: { content: polished_content, path: resource.path, url: resource.url }

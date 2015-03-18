@@ -7,16 +7,13 @@ pre{
 }
 
 
-pre.output{
-  padding: 1.0em;
-  background: #eee;
-  border: thin dashed #888;
-  color: #777;
-}
-
-p, li {
-  code{
-
+div.codepiece{
+  overflow: auto;
+  &.brief{
+    pre{
+      max-height: 400px;
+    }
   }
 }
+
 <%= Rouge::Themes::Github.render(:scope => '.highlight') %>

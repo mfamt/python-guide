@@ -1,0 +1,33 @@
+---
+title: JSON Parsing
+ordernum: 1600
+description: "This human-readable data format is nearly ubiquitous in modern data systems."
+
+tldr: |
+
+  ~~~py
+  import json
+
+  ### Simple array
+  print(json.loads('[1,2,3]'))     #   [1, 2, 3]
+  ### Simple dict
+  print(json.loads('{"a": 42, "b": "dog"}'))  # {'a': 42, 'b': 'dog'}
+
+  ### convenience method load()
+  tweetfile = open("/tmp/tweet.json")
+  tweetobj = json.load(tweetfile)
+  print(tweetobj['user']['screen_name'])     #  twitterapi
+  ~~~
+---
+
+
+
+
+
+## Parsing a Tweet
+
+Taking the example Tweet JSON representation from Twitter's [API documentation for its statuses/show endpoint:](https://dev.twitter.com/rest/reference/get/statuses/show/%3Aid); pretend the following text is stuffed into a variable named `tweetjson`:
+
+
+<%= brief_codepiece 'data-samples/apis/tweet.json' %>
+

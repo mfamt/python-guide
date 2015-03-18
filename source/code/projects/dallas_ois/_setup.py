@@ -25,3 +25,4 @@ HTML_INCIDENT_COLS = ('case_number', 'date', 'location', 'suspect_status',
     'suspect_weapon', 'suspects', 'officers', 'grand_jury_disposition')
 
 PDF_FILE = os.path.join(PDF_DIR, '{0}.pdf')
+GEOCODE_FILE = os.path.join(GEOCODE_DIR, '{0}.json')

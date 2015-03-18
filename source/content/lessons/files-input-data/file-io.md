@@ -15,3 +15,5 @@ introduction: |
 with open('filename.txt', 'r') as file:
     data = f.read()
 ~~~
+
+
