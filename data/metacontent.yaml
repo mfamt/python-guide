@@ -19,6 +19,12 @@ lessons:
       description: |
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque quae, culpa ex blanditiis aut omnis ab dolores! Omnis incidunt error ratione, illum excepturi, laborum dolorem, quod iure minus sequi iusto.
 
+
+    data-structures:
+      title: Data Structures
+      description: |
+        All the fun of immutable data and whatever
+
     loops-and-iterations:
       title: Loops and Iterations
       description: |
@@ -48,6 +54,10 @@ recipes:
     practical:
       title: "Little Practical Things"
 
+    multimedia:
+      title: "Graphics and Multimedia"
+
+
     apis-and-scraping:
       title: "APIs and Scraping Stuff"
 
@@ -56,8 +66,8 @@ recipes:
       title: "Data Analysis"
 
 
-    multimedia:
-      title: "Graphics and Multimedia"
+    web-app:
+      title: "Web Applications"
 
     project:
       title: "Big Real-World Projects"

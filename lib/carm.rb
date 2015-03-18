@@ -88,7 +88,7 @@ class Carm
     def get_content_scope_for_article(val)
       r = get_content_article(val)
 
-      self.scopes.find{|c| c.slug == r.scope_slug}
+      self.scopes[r.scope_slug]
     end
 
     def get_content_article_by_path(path)
