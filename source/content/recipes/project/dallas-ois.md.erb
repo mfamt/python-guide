@@ -1,0 +1,15 @@
+---
+title: "Counting the Dallas Police Department's Officer-Involved Shootings"
+ordernum: 1500
+description: Gathering data
+---
+<%- project_dir = 'projects/dallas_ois/' %>
+
+## Setup and imports
+<%= include_code_snippet(File.join(project_dir, '_setup.py')) %>
+
+
+
+<%= include_code_snippet(File.join(project_dir, '_fetch_pages.py')) %>
+
+<%= include_code_snippet(File.join(project_dir, '_extract_incidents_from_html.py')) %>

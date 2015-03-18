@@ -3,6 +3,11 @@ title: Ranges
 ordernum: 410
 references:
   - url: https://docs.python.org/3/library/stdtypes.html#ranges
+  - url: http://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html
+    title: "Edsger W. Dijkstra: Why numbering should start at zero" 
+takeaway: |
+  - Ranges are exclusive
+
 tldr: |
 
   ~~~py
