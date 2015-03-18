@@ -2,7 +2,7 @@
 title: String Indexing
 ordernum: 266
 references:
-  - url: https://docs.python.org/3.4/tutorial/introduction.html#strings
+  - url: https://docs.python.org/3/tutorial/introduction.html#strings
 tldr: |
 
   ~~~py

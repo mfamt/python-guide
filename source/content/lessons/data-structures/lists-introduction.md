@@ -3,7 +3,7 @@ title: Introduction to Lists and Mutable Data
 ordernum: 605
 references:
   - url: http://learnpythonthehardway.org/book/ex32.html
-  - url: https://docs.python.org/3.4/tutorial/datastructures.html
+  - url: https://docs.python.org/3/tutorial/datastructures.html
   - url: https://developers.google.com/edu/python/lists
   - url: http://stackoverflow.com/questions/626759/whats-the-difference-between-list-and-tuples
 tldr: |

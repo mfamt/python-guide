@@ -2,31 +2,64 @@
 title: Loops
 ordernum: 510
 references:
-  - url: https://docs.python.org/3.4/tutorial/datastructures.html#list-comprehensions
-  - url: http://effbot.org/zone/python-list.htm
+  - url: https://docs.python.org/3/tutorial/controlflow.html#for-statements
+  - url: https://docs.python.org/3/tutorial/controlflow.html#break-and-continue-statements-and-else-clauses-on-loops
   - url: https://wiki.python.org/moin/ForLoop
   - url: https://wiki.python.org/moin/WhileLoop
+  - url: http://stackoverflow.com/questions/8420705/example-use-of-continue-statement-in-python
+
+tldr: |
+
+  ~~~py
+  ### for loop
+  for x in ('a', 'b', 'c'):
+      print(x)           
+                         #  a
+                         #  b
+                         #  c  
+
+  ### while loop
+  y = 0
+  while y < 3:
+      print(y)
+      y += 1             
+                         # 0
+                         # 1
+                         # 2
+
+  ### break
+  z = 1
+  while z:
+      print("Oops infinite loop")
+      break
+                          # Oops infinite loop
+
+  ### continue
+  vowels = ""
+  for i in "Stanford":
+      if i in 'aeiou':
+          vowels += i
+          continue
+      print(i)
+                          # S
+                          # t
+                          # n
+                          # f
+                          # r
+                          # d
+
+  print(vowels)           # ao
+  ~~~
 ---
 
 
 When it comes to the topic of programming, I believe that there are two types of people:
 
-1. People who understand for-loops
-2. People for whom programming is an impossible, meaningless magic
+1. People who are programmers
+2. People who don't understand for-loops
 
-Alternatively:
+tldr:
 
-Those who understand for-loops. And those who aren't programmers.
-
-
-~~~py
-for x in [1, 2, 3]:
-    print(x)
-
-# 1
-# 2
-# 3
-~~~
 
 
 ## For loop
@@ -69,7 +102,11 @@ Nested for-loop
 for x in [1, 2, 3]:
     for y in ['a', 'b', 'c']:
         print("%s-%s") % (x, y)
+~~~
 
+output:
+
+~~~
 1-a
 1-b
 1-c

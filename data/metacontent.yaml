@@ -1,0 +1,13 @@
+lessons:
+  getting-started:
+    title: Getting Started
+  basic-syntax:
+    title: Basic Syntax
+  functions-and-conditional-branching:
+    title: Functions and Conditional Branching
+  loops-and-iterations:
+    title: Loops and Iterations
+  files-input-data:
+    title: "Input, Files, and Data"
+  build-and-design:
+    title: "Building and Designing"

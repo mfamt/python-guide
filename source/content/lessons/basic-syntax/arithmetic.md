@@ -2,9 +2,9 @@
 title: Arithmetic in Python
 ordernum: 210
 references:
-  - url: https://docs.python.org/3.4/tutorial/introduction.html#using-python-as-a-calculator
-  - url: https://docs.python.org/3.4/library/functions.html
-  - url: https://docs.python.org/3.4/library/functions.html#round
+  - url: https://docs.python.org/3/tutorial/introduction.html#using-python-as-a-calculator
+  - url: https://docs.python.org/3/library/functions.html
+  - url: https://docs.python.org/3/library/functions.html#round
 
 takeaway: |
   Those who are coming from different languages, or even Python 2.x, should be aware that __division__ always returns a `float`.
