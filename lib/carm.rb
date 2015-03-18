@@ -5,22 +5,28 @@ require 'lib/content_scope'
 class Carm
   attr_reader :content_articles
   def initialize(sitemap)
+    @sitemap = sitemap
     @site_resources = sitemap.resources
     @content_articles = formulate_content_articles
   end
 
 
   def lessons
-    ContentScope('lessons', @content_articles.select{|r| r.url =~ /\/content\/lessons\// })
+    scopes['lessons']
   end
 
   def recipes
-    ContentScope('recipes', @content_articles.select{|r| r.url =~ /\/content\/recipes\// })
+    scopes['recipes']
   end
 
 
   def scopes
-    [lessons, recipes]
+    metacontent.each_pair.inject({}) do |hsh, (scope_slug, scope_obj)|
+      scope_articles = @content_articles.select{|r| r.url =~ /\/content\/#{Regexp.escape(scope_slug)}\// }
+      hsh[scope_slug] = ContentScope(scope_slug, scope_obj, scope_articles)
+
+      hsh
+    end
   end
 
 
@@ -58,10 +64,13 @@ class Carm
   end
 
   private
+    # assume that data.metacontent holds the data
+    def metacontent
+      @sitemap.app.data.metacontent
+    end
+
     # assuming :lessons is an Array
     # returns index of chapter in Array
-
-
     def formulate_content_articles
       @site_resources.select{|r| r.url =~ /\/content\// }.
         reject{|c| c.path =~ /index.html/ }.

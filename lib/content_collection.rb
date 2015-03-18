@@ -1,11 +1,12 @@
 require 'lib/content_article'
 class ContentCollection
   # expects arr to be a bunch of resources
-  attr_reader :slug, :title
-  def initialize(the_slug, arr)
+  attr_reader :slug, :title, :description
+  def initialize(the_slug, obj, col_articles)
     @slug = the_slug
-    @title = @slug
-    @items = arr
+    @title = obj.title
+    @description = obj.description
+    @items = col_articles
   end
 
   def articles
@@ -48,6 +49,6 @@ class ContentCollection
 end
 
 
-def ContentCollection(the_slug, arr)
-  ContentCollection.new(the_slug, arr)
+def ContentCollection(the_slug, obj, arr)
+  ContentCollection.new(the_slug, obj, arr)
 end

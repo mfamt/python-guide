@@ -1,14 +1,14 @@
 require 'lib/content_article'
 class ContentScope
-  attr_reader :slug, :collections, :title
+  attr_reader :slug, :collections, :title, :description
 
-  def initialize(the_slug, arr)
+  def initialize(the_slug, obj, all_articles)
     @slug = the_slug
-    @title = @slug
-    @collections = arr.group_by{ |article|
-      article.collection_slug
-    }.each_pair.map do |kslug, articles|
-      ContentCollection(kslug, articles)
+    @title = obj.title
+    @title = obj.description
+    @collections = obj.collections.each_pair.map do |col_slug, col_obj|
+      col_articles = all_articles.select{|a| a.collection_slug == col_slug }
+      ContentCollection(col_slug, col_obj, col_articles)
     end
   end
 
@@ -23,6 +23,6 @@ class ContentScope
 end
 
 
-def ContentScope(s, a)
-  ContentScope.new(s, a)
+def ContentScope(s, obj, a)
+  ContentScope.new(s, obj, a)
 end

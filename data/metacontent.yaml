@@ -1,13 +1,63 @@
 lessons:
-  getting-started:
-    title: Getting Started
-  basic-syntax:
-    title: Basic Syntax
-  functions-and-conditional-branching:
-    title: Functions and Conditional Branching
-  loops-and-iterations:
-    title: Loops and Iterations
-  files-input-data:
-    title: "Input, Files, and Data"
-  build-and-design:
-    title: "Building and Designing"
+  title: Lessons
+  description: |
+    All the stuff you need to know
+
+  collections:
+    getting-started:
+      title: Getting Started
+      description: |
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit nam, libero dolores ipsam hic minima repellendus odio, quo tempora, nostrum praesentium quas possimus ex quam maiores vitae nemo sit consectetur.
+
+    basic-syntax:
+      title: Basic Syntax
+      description: |
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum autem cupiditate tenetur est ut id sed aut enim, consequatur labore dolorum debitis delectus nobis dolores aliquam eligendi, quae, placeat totam?
+
+    functions-and-conditional-branching:
+      title: Functions and Conditional Branching
+      description: |
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque quae, culpa ex blanditiis aut omnis ab dolores! Omnis incidunt error ratione, illum excepturi, laborum dolorem, quod iure minus sequi iusto.
+
+    loops-and-iterations:
+      title: Loops and Iterations
+      description: |
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati maxime alias sit voluptatum eum, quibusdam ipsum quidem, maiores. Provident quasi repellat nihil quo cum ipsam quis, dolores quam debitis nam.
+
+    files-input-data:
+      title: "Input, Files, and Data"
+      description: |
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident accusamus fugiat, ut perspiciatis vitae maiores nobis. Fugiat, suscipit dolores error cupiditate velit provident sapiente laudantium, tenetur accusantium enim labore quia.
+
+    build-and-design:
+      title: "Building and Designing"
+      description: |
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, quaerat vitae aperiam aliquam aut corporis sequi repudiandae hic libero alias et molestiae, est neque, delectus esse debitis recusandae magni id.
+
+
+
+recipes:
+  title: Recipes
+  description: |
+    Let's make some stuff
+  collections:
+
+    informal:
+      title: "Informal Exploration"
+
+    practical:
+      title: "Little Practical Things"
+
+    apis-and-scraping:
+      title: "APIs and Scraping Stuff"
+
+
+    data-analysis:
+      title: "Data Analysis"
+
+
+    multimedia:
+      title: "Graphics and Multimedia"
+
+    project:
+      title: "Big Real-World Projects"
