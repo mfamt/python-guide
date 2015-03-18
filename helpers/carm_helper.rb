@@ -18,9 +18,22 @@ def link_to_contents
 end
 
 def link_to_content_article(val)
-  c = get_content_article(val)
+  if val.is_a?(Hash)   # i.e. just a slug
+    c = get_content_article(val[:slug])
+    t = val[:title] || c.title
+    n = val[:notes] || nil
 
-  link_to c.title, c.url
+  else
+    c = get_content_article(val)
+    t = c.title
+    n = nil
+  end
+
+  if n.present?
+    [link_to(t, c.url), n].join(' - ')
+  else
+    link_to t, c.url
+  end
 end
 
 def link_to_article_collection(val)

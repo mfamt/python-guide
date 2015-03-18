@@ -4,3 +4,7 @@ head
   title => page_title
   = javascript_include_tag 'application'
   = stylesheet_link_tag 'application'
+
+
+  - if build? && (ga_id = config[:google_analytics_id])
+    = partial '/layouts/site/google_analytics', locals: { :ga_id => ga_id }

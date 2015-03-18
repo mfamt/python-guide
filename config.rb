@@ -7,7 +7,7 @@ set :site_title, config[:mfamt_title]
 
 set :site_deck, "Python practical tutorials and recipes"
 set :site_description, "A practical guide to Python aimed at data and computational journalism"
-
+set :google_analytics_id, 'UA-60893965-1'
 
 activate :directory_indexes
 activate :i18n, :mount_at_root => :en

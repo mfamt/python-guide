@@ -1,8 +1,14 @@
 = wrap_layout :layout
+  - article = current_content_article
 
   div.container
     = partial "/layouts/partials/resource_navigation"
 
+  - if article.dependencies?
+    div.container
+      h4 Dependencies
+      - article.dependencies.each do |a|
+        div = link_to_content_article a
 
 
-  => partial "/layouts/article", locals: { :article_content => yield }
+  => partial "/layouts/article", locals: { article: article,  :yielded_content => yield }

@@ -53,8 +53,21 @@ class Carm
       if val =~ /\/\w+/ # it's a path
         get_content_article_by_path(val)
       else
-        raise StandardError, '#get_content_article() needs a useful identifier'
+        get_content_article_by_article_slug(val)
       end
+    end
+  end
+
+  # ignore scope/collection, just go by slug
+  # obviously, if content has the same slug, this
+  # is a problem
+  def get_content_article_by_article_slug(aslug)
+    a = @content_articles.find{|a| a.article_slug == aslug}
+
+    if a.nil?
+      raise ContentArticleSlugNotFound, "'#{aslug}' did not match any articles"
+    else
+      return a
     end
   end
 
@@ -97,3 +110,8 @@ class Carm
       lessons.find{|c| c.slug == pslug }
     end
 end
+
+
+class CarmError < StandardError; end
+
+class ContentArticleSlugNotFound < CarmError; end;

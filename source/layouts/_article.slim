@@ -1,8 +1,7 @@
-- ccr = current_content_article
 div.container
   article
     div.content-meta
-      h1.title => ccr.title
-      div.description => make_markdown ccr.description
+      h1.title => article.title
+      div.description => make_markdown article.description
 
-    div.content-article => article_content
+    div.content-article => yielded_content

@@ -16,6 +16,25 @@ class ContentArticle
     @description = resource.data.description
     @tldr = resource.data.tldr
     @takeaway = resource.data.takeaway
+    @depends_on = resource.data.depends_on || []
+  end
+
+  def dependencies?
+    !(@depends_on.empty?)
+  end
+
+  def dependencies
+    @depends_on.map do |d|
+      if d.is_a?(String)
+        d
+      else
+        # return an object
+        # TK we don't really do anything...yet
+        # instead, we just let link_to_content_article do the
+        # heavy lifting...
+        d
+      end
+    end
   end
 
   def scope_title
