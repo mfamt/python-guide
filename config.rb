@@ -4,6 +4,7 @@ Slim::Engine.disable_option_validator!
 set :mfamt_topic, 'Python'
 set :mfamt_title, "Move Fast and Make Things in #{mfamt_topic}"
 set :site_title, config[:mfamt_title]
+set :site_author, "Dan Nguyen"
 
 set :site_deck, "Python practical tutorials and recipes"
 set :site_description, "A practical guide to Python aimed at data and computational journalism"

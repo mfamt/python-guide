@@ -1,15 +1,18 @@
 def page_title
   data_title = current_page.data.title
-  if data_title.blank?
-    config[:site_title]
-  elsif data_title == config[:site_title]
-    "#{config[:site_deck]} | #{config[:site_title]}"
+  if data_title.blank? || data_title == config[:site_title]
+    # e.g. Move Fast and Blah | Stuff for Blah
+    [config[:site_title], config[:site_deck]].join(' | ')
   else
+    # e.g. This Page | Move Fast and Blah
     "#{data_title} | #{config[:site_title]}"
   end
 end
 
 
+def page_author
+  current_page.data.author || config[:site_author]
+end
 
 def page_description
   current_page.data.description || config[:site_description]
