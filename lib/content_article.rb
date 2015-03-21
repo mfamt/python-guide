@@ -1,5 +1,5 @@
 class ContentArticle
-  attr_reader :title, :description, :ordernum, :tldr, :takeaway
+  attr_reader :title, :description, :ordernum, :tldr, :tldr_text
   attr_reader :slug, :scope_slug, :collection_slug, :article_slug, :url, :path
   def initialize(resource)
     @url    = resource.url
@@ -15,7 +15,7 @@ class ContentArticle
 
     @description = resource.data.description
     @tldr = resource.data.tldr
-    @takeaway = resource.data.takeaway
+    @tldr_text = resource.data.tldr_text
     @depends_on = resource.data.depends_on || []
   end
 

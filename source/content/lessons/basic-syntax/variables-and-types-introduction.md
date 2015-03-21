@@ -1,7 +1,7 @@
 ---
 title: "Variables and Object Types, An Introduction"
 ordernum: 220
-takeaway: |
+tldr_summary: |
   Variables do not need to be declared.
   Everything is an object
 tldr: |

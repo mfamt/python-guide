@@ -1,8 +1,17 @@
 ---
 title: How to Write a Function
 ordernum: 350
+tldr: |
+  
+  ~~~py
+
+  ~~~
 ---
 
+
+### Key point
+
+Unlike all the interactive programming we've done, note that nothing is executed until the function is actually called.
 
 
 ## Basic function body
@@ -117,3 +126,17 @@ def brew(a = 42, b = 99):
 brew(30, 108)
 # 108,30
 ~~~
+
+
+
+## Checking code at runtime
+
+~~~py
+def dont_run_me_please():
+    ITOLD_U_NOT_TO_RUN, ME, WHATS_WRONG_WITH_YOU
+
+dont_run_me_please()
+# name 'ITOLD_U_NOT_TO_RUN' is not defined
+~~~
+
+

@@ -6,10 +6,45 @@ references:
   - url: https://docs.python.org/3/library/functions.html
   - url: https://docs.python.org/3/library/functions.html#round
 
-takeaway: |
+tldr_summary: |
   Those who are coming from different languages, or even Python 2.x, should be aware that __division__ always returns a `float`.
 
 tldr: |
+
+  ## Arithmetic and number types
+  
+  ### Adding integers
+
+  ~~~py
+  10 + 20     #  30  
+  ~~~
+
+  ### Adding floating-point numbers
+  ~~~py
+  10 + 20.0    # 30.0
+  ~~~
+
+  ### Division
+
+  In Python 3.x, the result of a division is always a `float`:
+
+  ~~~py
+  0 / 1       # 0.0
+  ~~~
+
+  Use `//` to do floor division:
+
+  ~~~py
+  10 // 2     # 5
+  ~~~
+
+---
+
+
+
+
+
+### Old TLDR
 
   ~~~py
   ### Basic arithmetic
@@ -34,8 +69,3 @@ tldr: |
   print(round(4))         # 4
   print(round(4.237, 2))  # 4.24  
   ~~~
-
----
-
-
-

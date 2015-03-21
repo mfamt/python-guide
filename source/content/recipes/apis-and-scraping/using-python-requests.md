@@ -1,9 +1,15 @@
 ---
-title: Making URL requests
+title: Web Requests with the Requests Library
 ordernum: 1400
 references:
   - url: http://docs.python-requests.org/en/latest/
+  - url: https://docs.python.org/3/howto/urllib2.html
+
+
 ---
+
+
+
 
 
 ~~~py

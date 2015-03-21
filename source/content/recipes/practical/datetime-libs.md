@@ -9,6 +9,7 @@ references:
   - url: https://unix4lyfe.org/time/
     title: What every programmer should know about time
   - url: http://stackoverflow.com/questions/1060279/iterating-through-a-range-of-dates-in-python
+  - url: http://stackoverflow.com/a/9754466/160863
 ---
 
 ## Standard datetime
@@ -23,6 +24,14 @@ datetime.date(2015, 12, 3)
 datetime.datetime.strptime('November 24, 1987, 2:30PM', '%B %d, %Y, %I:%M%p')
 # => datetime.datetime(1987, 11, 24, 14, 30)
 ~~~
+
+
+### birthdate
+
+    def age():
+        t, b = date.today(), self.birthdate
+        return t.year - b.year - int((t.month, t.day) < (b.month, b.day))
+
 
 
 ## Using dateutil

@@ -17,8 +17,7 @@ lessons:
     functions-and-conditional-branching:
       title: Functions and Conditional Branching
       description: |
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque quae, culpa ex blanditiis aut omnis ab dolores! Omnis incidunt error ratione, illum excepturi, laborum dolorem, quod iure minus sequi iusto.
-
+        Encapsulating code and logic. This represents a break from our previous examples of writing and executing code interactively.
 
     data-structures:
       title: Data Structures
@@ -48,22 +47,23 @@ recipes:
     Let's make some stuff
   collections:
 
+
+          practical:
+            title: "Practical Tasks"
+
           informal:
             title: "Informal Exploration"
 
-          practical:
-            title: "Little Practical Things"
-
-          multimedia:
-            title: "Graphics and Multimedia"
-
-
           apis-and-scraping:
-            title: "APIs and Scraping Stuff"
+            title: "Web Requests, APIs, and Scraping"
 
 
           data-analysis:
             title: "Data Analysis"
+
+
+          multimedia:
+            title: "Graphics and Multimedia"
 
 
           web-app:

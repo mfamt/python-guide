@@ -1,5 +1,5 @@
 ---
-title: Using NLTK and Naive Bayes to Classifying Names by Gender
+title: Using NLTK and Naive Bayes to Classify Names by Gender
 ordernum: 1250
 references:
   - url: http://www.nltk.org/book/ch06.html
