@@ -17,6 +17,7 @@ class ContentArticle
     @tldr = resource.data.tldr
     @tldr_text = resource.data.tldr_text
     @depends_on = resource.data.depends_on || []
+    @_references = resource.data.references || []
   end
 
   def dependencies?
@@ -36,6 +37,15 @@ class ContentArticle
       end
     end
   end
+
+  def references?
+    !(references.empty?)
+  end
+
+  def references
+    @_references
+  end
+
 
   def scope_title
     @scope.capitalize

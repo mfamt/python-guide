@@ -4,6 +4,13 @@
   div.container
     = partial "/layouts/partials/resource_navigation"
 
+
+  - if article.references?
+    div.container
+      h4 References
+      - article.references.each do |r|
+        div = link_to_reference(r)
+
   - if article.dependencies?
     div.container
       h4 Dependencies

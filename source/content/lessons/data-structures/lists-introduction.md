@@ -1,5 +1,5 @@
 ---
-title: Introduction to Lists
+title: Lists
 ordernum: 605
 references:
   - url: http://learnpythonthehardway.org/book/ex32.html

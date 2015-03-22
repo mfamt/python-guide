@@ -61,3 +61,11 @@ end
 def contains_leading_underscore?(path)
   path.to_s.split('/').any?{|p| p =~ /^_/ }
 end
+
+
+def link_to_reference(obj)
+  u = URI.parse(obj['url'])
+  title = obj['title'] || truncate(u.to_s, length: 125)
+
+  link_to title, u.to_s
+end

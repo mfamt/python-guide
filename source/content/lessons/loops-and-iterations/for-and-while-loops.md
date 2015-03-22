@@ -10,46 +10,55 @@ references:
 
 tldr: |
 
+  ## `for`-loop
   ~~~py
-  ### for loop
   for x in ('a', 'b', 'c'):
       print(x)           
-                         #  a
-                         #  b
-                         #  c  
 
-  ### while loop
+  #  a
+  #  b
+  #  c  
+  ~~~
+
+  ## `while`-loop
+  ~~~py
   y = 0
   while y < 3:
       print(y)
       y += 1             
-                         # 0
-                         # 1
-                         # 2
 
-  ### break
-  z = 1
-  while z:
-      print("Oops infinite loop")
-      break
-                          # Oops infinite loop
-
-  ### continue
-  vowels = ""
-  for i in "Stanford":
-      if i in 'aeiou':
-          vowels += i
-          continue
-      print(i)
-                          # S
-                          # t
-                          # n
-                          # f
-                          # r
-                          # d
-
-  print(vowels)           # ao
+  # 0
+  # 1
+  # 2
   ~~~
+
+
+
+  ## `break`
+  ~~~py
+  z = 1
+  while z < 1000:
+      print(z)
+      break
+
+  # 1
+  ~~~
+
+
+
+  ## Looping through dictionary key-value pairs with `items()`
+  ~~~py
+  d = {'b': 99, 'z': 2000}
+  for k, v in d.items():
+      print(k, v) 
+
+  # b 99
+  # z 2000
+  ~~~
+
+
+
+
 ---
 
 

@@ -7,26 +7,20 @@ tldr: |
   
   ~~~py
   a = range(0, 10)
-  print(len(a))       #  10
-  print(min(a))       #   0
-  print(max(a))       #   9
-  b = 'Black Mamba', 'Cottonmouth', 'Copperhead', 'Cottonmouth'
-  print('Cottonmouth' in b)
-  # => True
-  print('Mamba' in b)
-  # => False
-  print('Copper' not in b)
-  # => true
-  print(b.index('Cottonmouth'))
-  # => 1
-  print(b.count('Cottonmouth'))
-  # => 2
+  len(a)      #  10
+  min(a)       #   0
+  max(a)       #   9
+  ~~~
 
-  # Strings are sequences, too
-  print("Cottonmouth".count('t'))
-  # => 3
-  print('mouth' in 'Cottonmouth')
-  # => True
+  ## Membership tests and functions
+
+  ~~~py
+  b = 'Black Mamba', 'Cottonmouth', 'Copperhead', 'Cottonmouth'
+  'Cottonmouth' in b  # True
+  'Mamba' in b        # False
+  'Copper' not in b   # True
+  b.index('Cottonmouth')           # 1
+  b.count('Cottonmouth')    # 2
   ~~~
 ---
 

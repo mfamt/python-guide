@@ -17,12 +17,12 @@ tldr: |
   ## Identity tests
 
   ~~~py
-  'A' == 'A'   # True
-  'A' is 'A'   # True
-  5 == 5.0     # True
-  5 is 5.0     # False
-  5 is not 5.0 # True
-  5 != 5.0
+  'A' == 'A'   # True   (equal to)
+  'A' is 'A'   # True   (same objects)
+  5 == 5.0     # True   (equal to)
+  5 is 5.0     # False  (not the same objects)
+  5 != 5.0     # False  (5 and 5.0 are numerically equal)
+  5 is not 5.0 # True   (5 and 5.0 are different objects)
   ~~~
 
   ## Membership tests
