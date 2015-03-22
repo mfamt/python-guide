@@ -6,35 +6,32 @@ description: |
 references:
   - url: https://docs.python.org/3/library/string.html
   - url: https://docs.python.org/3/library/stdtypes.html#string-methods
+
+tldr: |
+  
+  ~~~py
+  'Hello world'.upper()           # HELLO WORLD
+  'Hello world'.lower()           # hello world
+  'Hello world'.title()           # Hello World
+
+  ## Finding and replacing
+  'She sells seashells'.count('he')   # 2
+  'cat'.index('a')                    # 1
+  'ello' in 'Hello world'             # True
+  "Hello world".replace('world', 'you')  # Hello you
+
+  "42fourtyTWO".isalnum()     # True
+  '42_0'.isalnum()            # False
+
+  ## Stripping and padding
+  "  Hello world".strip()     # 'Hello world'
+  "42".zfill(4)               # '0042'
+  "Hello".ljust(7, 'X')       # 'HelloXX'
+  "Hello".rjust(7, 'X')       # 'XXHello'
+  ~~~
+
 ---
 
 
-#### 'replace'
-
-~~~py
-str.replace(old, new, _first_count)
-~~~
-
-
-#### 'del'
-
-
-
-- capitalize
-- casefold
-- count('somestr')
-- 'stu' in 'stuff'
-- index
-- isdecimal()
-- isdigit()
-- isnumeric()
-- join(iterable)
-- lower()
-- replace(old, new)
-- split()
-- strip()
-- title()
-- upper()
-- zfill(5)
 
 

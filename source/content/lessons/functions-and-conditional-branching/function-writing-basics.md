@@ -1,10 +1,47 @@
 ---
 title: How to Write a Function
-ordernum: 350
+ordernum: 301
 tldr: |
+
+  ## Basic function
   
   ~~~py
+  def say_hello():
+      print("Hello") 
+  ~~~
 
+  ## Arguments
+
+  ~~~py
+  def say_hello_to(somebody):
+      print("Hello", somebody)
+  ~~~
+
+
+  ## Default arguments
+  
+  ~~~py
+  def say_bye_to(somebody, addon = 'nice seeing you'):
+      print("Goodbye", somebody, addon)
+  
+  say_bye_to('Dan')                      # Goodbye Dan nice seeing you
+  say_bye_to('Fran', 'and good night')   # Goodbye Fran and good night
+  ~~~
+  
+  ### Using named arguments
+
+  ~~~py
+  say_bye_to(addon = 'man', somebody = 'Stan')  #  Goodbye Stan man
+  ~~~
+
+  
+  ## The `return` keyword
+
+  ~~~py
+  def do_hello(person):
+      return "Hello {0}".format(person)
+
+  do_hello("dan").upper()    #  HELLO DAN
   ~~~
 ---
 
@@ -17,8 +54,7 @@ Unlike all the interactive programming we've done, note that nothing is executed
 ## Basic function body
 
 ~~~py
-def say_hello():
-    print("Hello")
+
 ~~~
 
 ## Function with an argument

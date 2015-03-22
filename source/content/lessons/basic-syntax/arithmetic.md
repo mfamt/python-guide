@@ -11,20 +11,19 @@ tldr_summary: |
 
 tldr: |
 
-  ## Arithmetic and number types
   
-  ### Adding integers
+  ## Adding integers
 
   ~~~py
-  10 + 20     #  30  
+  10 + 20      #  30  
   ~~~
 
-  ### Adding floating-point numbers
+  ## Floating-point numbers
   ~~~py
   10 + 20.0    # 30.0
   ~~~
 
-  ### Division
+  ## Division
 
   In Python 3.x, the result of a division is always a `float`:
 
@@ -36,6 +35,17 @@ tldr: |
 
   ~~~py
   10 // 2     # 5
+  ~~~
+
+  ## Other operators and built-in functions
+
+  ~~~py
+  10 % 4           # 2
+  10 ** 4          # 10000
+  abs(-42)         # 42
+  pow(2,6)         # 64
+  round(4)         # 4
+  round(4.237, 2)  # 4.24    
   ~~~
 
 ---

@@ -52,8 +52,8 @@ div.contents-page
                 div.meta
                   div.description
                     strong => lesson.description
-                  - if lesson.takeaway.present?
-                    p = make_markdown lesson.takeaway
+                  - if lesson.tldr_text.present?
+                    p = make_markdown lesson.tldr_text
                   - else
                     p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, voluptatem laborum consequuntur sapiente esse dolorem! Dolores fugiat enim, quo laudantium, exercitationem doloremque dicta, in adipisci reprehenderit aut inventore, itaque provident.
               div.col-sm-8
