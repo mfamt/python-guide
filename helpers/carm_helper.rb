@@ -36,6 +36,13 @@ def link_to_content_article(val)
   end
 end
 
+# convenience method to do little link bundles:
+# = links_to_content_articles('arithmetic', 'dictionaries')
+def links_to_content_articles(*vals)
+  Array(vals).map{|v| }
+end
+
+# link to /lessons/basic-syntax
 def link_to_article_collection(val)
   c = get_content_article(val)
   link_to 'TK', '/'

@@ -1,24 +1,26 @@
 ---
 title: File Input and Output
 description: How to read and write to files
-ordernum: 1100
-
+ordernum: 1110
 references: 
   - url: https://docs.python.org/3/tutorial/inputoutput.html
-  - url: https://docs.python.org/3/library/os.html#files-and-directories
-introduction: |
+tldr_text: |
   Read and writing to files is an important part of programming, as this is often the way that we will get data TK.
 
 tldr: |
   
-  ## Files and directories
+  ## Opening a file for reading
 
-  ### Making a nested directory
-  
-  ~~~py
-  from os import makedirs
-  makedirs("stairway/to/heaven", exist_ok = True)
-  ~~~
+  ## Reading data from an opened file
+
+  ## Opening a file for writing
+
+  ## Writing data to an open file
+
+
+
+  ## Using `with`
+
 
 
 

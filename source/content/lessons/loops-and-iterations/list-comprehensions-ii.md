@@ -1,18 +1,34 @@
 ---
-title: List Comprehensions and Logic
+title: Unpacking Sequences
 ordernum: 655
 references:
-  - url: http://norvig.com/spell-correct.html
-  - 
+  - url: https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists
 tldr: |
-  
-  ~~~python
-  ### Unpacking variables with tuples
-  a = ('Clinton', 'Bill'), ('Bush', 'George')
-  names = [" ".join((first_n, last_n)) for last_n, first_n in a]
-  print(names)    #   ['Bill Clinton', 'George Bush']
+
+  ## Variable assignments
+
+  ~~~py
+  a, b = 'Hello', 'world'
+  print(a)                   # Hello
+  print(b)                   # world
   ~~~
 
+  ### Catchall 
+
+  ~~~py
+  a, *b = ('Hello', 'world', 'again')
+  print(a)          # Hello
+  print(b)          # ['world', 'again']
+  ~~~
+
+
+
+  ## Function arguments
+
+  ~~~py
+  names = ('Alice', 'Bob', 'Charles')
+  "Hey {}, {}, {}, and {}".format(*names)  # 'Hey Alice, Bob, and Charles'
+  ~~~
 ---
 
 
