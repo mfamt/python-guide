@@ -18,3 +18,23 @@ references:
 ~~~sh
 pip install beautifulsoup4
 ~~~
+
+
+## Make soup
+
+~~~sh
+from bs4 import BeautifulSoup
+from urllib.request import urlopen
+response = urlopen('http://www.example.com')
+soup = BeautifulSoup(response.read())  
+~~~
+
+
+## Get all links on a page
+
+~~~sh
+links = soup.find_all('a')
+len(links)                    # 192
+links[0]['href']               
+~~~
+

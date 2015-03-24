@@ -54,16 +54,29 @@ def get_number_of_boys_or_fyob(y):
 ~~~
 
 
-
-*How many babies since 1890?*
-
+### And other questions
 
 
 
-
-*How man*
-
+### Repetition and determinism
 
 
+Following the click and download instructions are imprecise.
 
+~~~py
+import urllib
+downloadfile('http://example.com')
+~~~
+
+
+
+### Communicating it
+
+Tweeting people:
+
+~~~py
+def tweet_name_results(name):
+    msg = "Hello {name}, {x} babies have your name"
+
+~~~
 

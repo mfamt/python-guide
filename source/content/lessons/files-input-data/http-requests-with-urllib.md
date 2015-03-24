@@ -5,10 +5,10 @@ references:
   - url: https://docs.python.org/3/howto/urllib2.html
 tldr: |
   
-  ### Fetching URLs
+  ## Fetching URLs
 
   ~~~py
-  from urlib.request from urlopen
+  from urllib.request import urlopen
   response = urlopen('http://python.org')  
   ~~~
 ---
