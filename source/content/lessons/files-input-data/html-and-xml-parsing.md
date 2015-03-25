@@ -22,7 +22,7 @@ pip install beautifulsoup4
 
 ## Make soup
 
-~~~sh
+~~~py
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 response = urlopen('http://www.example.com')
