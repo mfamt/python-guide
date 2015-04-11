@@ -10,25 +10,7 @@ depends_on:
 
 ### Collecting the data
 
-~~~py
-from os.path import basename, splitext
-from os import makedirs
-from io import BytesIO
-from zipfile import ZipFile
-import requests
-
-SITEURL = 'http://www.ssa.gov/OACT/babynames/{0}'
-babypaths = ('nationwide', 'names.zip'), ('state', 'state/namesbystate.zip')
-for p, zipurl in babypaths:
-    # Download the files    
-    print("Downloading:", zipurl, 'Saving to: /%s' % p)
-    zb = requests.get(SITEURL.format(zipurl)).content
-    with ZipFile(BytesIO(zb)) as z:        
-        makedirs(p, exist_ok = True)
-        z.extractall(path = p, 
-           members = [x for x in z.namelist() if 'txt' in x.lower()]) 
-~~~
-
+<%= codepiece 'projects/ssa_baby_names/download_data.py' %>
 
 
 
