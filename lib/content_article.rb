@@ -20,6 +20,10 @@ class ContentArticle
     @_references = resource.data.references || []
   end
 
+  def takeaways?
+    @tldr.present? || @tldr_text.present?
+  end
+
   def dependencies?
     !(@depends_on.empty?)
   end

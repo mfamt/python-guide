@@ -4,11 +4,13 @@ div.container
       h1.title => article.title
       div.description => make_markdown article.description
 
-    div.content-tldr
-      h2 Takeaways
-      div.tldr
-        => make_markdown article.tldr_text
-        => make_markdown article.tldr
+
+    - if article.takeaways?
+      div.content-tldr
+        h2 Takeaways
+        div.tldr
+          => make_markdown article.tldr_text
+          => make_markdown article.tldr
 
 
     div.content-article => yielded_content

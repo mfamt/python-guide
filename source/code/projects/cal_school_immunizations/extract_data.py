@@ -1,5 +1,6 @@
-import re
+import csv
 import json
+import re
 from glob import glob
 from xlrd import open_workbook
 XLS_DIR = "./data-hold/xls"
@@ -11,7 +12,10 @@ pre_2012_headers = ['school_code', 'county', 'school_type', 'district_code', 'sc
 post_2012_headers = ['school_code', 'county', 'school_type', 'district_name', 'city',
 'school_name', 'enrollment', 'uptodate_num', 'uptodate_pct', 'conditional_num', 'conditional_pct',
 'pme_num', 'pme_pct', 'pbe_num', 'pbe_pct', 'dtp_num', 'dtp_pct', 'polio_num',
-'polio_pct', 'mmr_num', 'mmr_pct', 'hepb_num', 'hepb_pct', 'vari_num', 'vari_pct', 'reported']
+'polio_pct', 'mmr2_num', 'mmr2_pct', 'hepb_num', 'hepb_pct', 'vari_num', 'vari_pct', 'reported']
+# differences between pre/post 2012:
+#  post-2012 only records 2-dose MMR, e.g. `mmr2_num` and `mmr2_pct`
+
 
 data = []
 for xlsname in glob(XLS_DIR + '/*.xls*'):
@@ -24,13 +28,31 @@ for xlsname in glob(XLS_DIR + '/*.xls*'):
     book = open_workbook(xlsname)
     # open the first non-empty spreadsheet
     sheet = [s for s in book.sheets() if s.nrows > 0][0]
+    print(xlsname, "has", sheet.nrows, "rows")
     for x in range(1, sheet.nrows - 1):
         row = sheet.row_values(x)
         if re.search('\d{7}', str(row[0])):
             d = dict(zip(headers, row))
             d['year'] = year
-            print(x, year, d['school_name'])
             data.append(d)
 
-with open("data-hold/k-immune.json", "w") as jfile:
+
+print("There are", len(data), 'data rows all together')
+
+# write a JSON
+jname = "data-hold/k-immune.json"
+print("Writing to JSON:", jname)
+with open(jname, "w") as jfile:
     jfile.write(json.dumps(data, indent = 4))
+
+
+# write a CSV
+cname = 'data-hold/k-immune.csv'
+print("Writing to CSV:", cname)
+writer = csv.DictWriter(open(cname, 'w'),
+   fieldnames = set(pre_2012_headers + post_2012_headers + ['year']),
+   delimiter=','
+)
+writer.writeheader()
+for d in data:
+    writer.writerow(d)

@@ -10,22 +10,60 @@ references:
 
 ## Downloading a zip and unzipping it 
 
+Using the most basic steps
+
 ~~~py
-with ZipFile(zipname) as zf:
-    zf.extractall(path = '/tmp')
+from urllib.request import urlopen
+from zipfile import ZipFile
+zipurl = 'http://stash.compjour.org/data/1800ssa.zip'
+# Download the file from the URL
+zipresp = urlopen(zipurl)
+# Create a new file on the hard drive
+tempzip = open("/tmp/tempfile.zip", "wb")
+# Write the contents of the downloaded file into the new file
+tempzip.write(zipresp.read())
+# Close the newly-created file
+tempzip.close()
+# Re-open the newly-created file with ZipFile()
+zf = ZipFile("/tmp/tempfile.zip")
+# Extract its contents into /tmp/mystuff
+# note that extractall will automatically create the path
+zf.extractall(path = '/tmp/mystuff')
+# close the ZipFile instance
+zf.close()
 ~~~
 
 
-## Using temp file
+## Using temp file and shutil
+
+Why go through the process of naming a temporary file?
 
 ~~~py
-from urlib.request import urlretrieve
-tmpname, headers = urlretrieve('http://python.org') 
-with ZipFile(tmpname) as zf:
-    zf.extractall(path = '/tmp')
+from urllib.request import urlopen
+from tempfile import NamedTemporaryFile
+from shutil import unpack_archive
+zipurl = 'http://stash.compjour.org/data/1800ssa.zip'
+zipresp = urlopen(zipurl)
+tfile = NamedTemporaryFile()
+tfile.write(zipresp.read())
+tfile.seek(0)
+unpack_archive(tfile.name, '/tmp/mystuff2', format = 'zip')
+zipresp.close()
+tfile.close()
 ~~~
 
+A little shorter:
 
+~~~py
+from urllib.request import urlopen
+from tempfile import NamedTemporaryFile
+from shutil import unpack_archive
+zipurl = 'http://stash.compjour.org/data/1800ssa.zip'
+with urlopen(zipurl) as zipresp, NamedTemporaryFile() as tfile:
+    tfile.write(zipresp.read())
+    tfile.seek(0)
+    unpack_archive(tfile.name, '/tmp/mystuff3', format = 'zip')
+~~~
 
 
 ## Unzipping without saving the zip
@@ -33,11 +71,13 @@ with ZipFile(tmpname) as zf:
 Solution via [StackOverflow user Vishal](http://stackoverflow.com/a/5711095/160863):
 
 ~~~py
-from io import StringIO
+from io import BytesIO
+from urllib.request import urlopen
 from zipfile import ZipFile
-# assuming this step has happened:
-# resp = urlopen("http://www.example.com/a.zip")
-with ZipFile(StringIO(resp.read())) # TK
+zipurl = 'http://stash.compjour.org/data/1800ssa.zip'
+with urlopen(zipurl) as zipresp:
+    with ZipFile(BytesIO(zipresp.read())) as zfile:
+        zfile.extractall('/tmp/mystuff4')
 ~~~
 
 
