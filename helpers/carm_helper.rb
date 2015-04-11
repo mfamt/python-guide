@@ -1,3 +1,4 @@
+# TK todo, make this a singleton
 def carm
   Carm.new(sitemap)
 end

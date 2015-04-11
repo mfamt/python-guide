@@ -24,10 +24,11 @@ In: `.tweepyrc`
 
 ~~~json
 {
+  "screen_name": "YOUR_SCREEN_NAME",
   "consumer_key": "CONSUMER_KEY",
   "consumer_secret": "CONSUMER_SECRET",
   "access_token": "ACCESS_TOKEN",
-  "access_token_secret": "ACCESS_TOKSECRET"
+  "access_token_secret": "ACCESS_TOKEN_SECRET"
 }
 ~~~
 
@@ -39,16 +40,18 @@ In: `.tweepyrc`
 
 ~~~py
 import json
+import os
+import tweepy
 credsfile = os.path.expanduser('~/.tweepyrc')
 creds = json.load(open(credsfile))
-
+# Get authentication token
 auth = tweepy.OAuthHandler(consumer_key = creds['consumer_key'], 
   consumer_secret = creds['consumer_secret'])
 auth.set_access_token(creds['access_token'], 
   creds['access_token_secret'])
-
 # create an API handler
 api = tweepy.API(auth) 
+
 print(type(api))           # <class 'tweepy.api.API'>
 # get latest 20 tweets from your own timeline
 home_tweets = api.home_timeline()

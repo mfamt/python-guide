@@ -33,7 +33,7 @@ with ZipFile(tmpname) as zf:
 Solution via [StackOverflow user Vishal](http://stackoverflow.com/a/5711095/160863):
 
 ~~~py
-from StringIO import StringIO
+from io import StringIO
 from zipfile import ZipFile
 # assuming this step has happened:
 # resp = urlopen("http://www.example.com/a.zip")

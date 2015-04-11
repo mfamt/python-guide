@@ -53,15 +53,3 @@ tldr: |
 
 ---
 
-
-### The `with` suite
-
-~~~py
-with open('filename.txt', 'r') as file:
-    data = f.read()
-~~~
-
-
-### Making a directory
-
-https://docs.python.org/3.4/library/os.html#os.makedirs

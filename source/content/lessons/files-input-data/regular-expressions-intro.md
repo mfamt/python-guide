@@ -8,20 +8,24 @@ references:
   - url: https://docs.python.org/3/howto/regex.html#regex-howto
 tldr: |
 
+  ## `re.search()`
   ~~~py
   import re
-
   pattern = '\d{1,3},\d{3}'
   sentence = 'He spent $42,081 last night.'
-  ### re.search(regex, string)
+  re.search('zblah', sentence)   #  None
+  ~~~
+  
+  ## Match object  
+  ~~~py
   m = re.search(pattern, sentence)
-  print(m)         #  <_sre.SRE_Match object; span=(10, 16), match='42,081'>
-  print(m.span())  # (10, 16)
-  print(m.group()) # 42,081 
-  print(re.search('zblah', sentence))   #  None
+  #  <_sre.SRE_Match object; span=(10, 16), match='42,081'>
+  m.span()                       #  (10, 16)
+  m.group()                      #  42,081 
   ~~~
 
-
+  
+  
 
 ---
 

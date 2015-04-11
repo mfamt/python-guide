@@ -13,3 +13,4 @@
 /_drafts
 .s3_sync
 Gemfile.lock
+data-hold/

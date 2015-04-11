@@ -5,6 +5,8 @@ description: "This human-readable data format is nearly ubiquitous in modern dat
 
 tldr: |
 
+  ## Dicts and lists
+
   ~~~py
   import json
 
@@ -12,27 +14,23 @@ tldr: |
   print(json.loads('[1,2,3]'))     #   [1, 2, 3]
   ### Simple dict
   print(json.loads('{"a": 42, "b": "dog"}'))  # {'a': 42, 'b': 'dog'}
+  ~~~
 
-  ### convenience method load()
+  ## Loading from a file 
+
+  ~~~py
   tweetfile = open("/tmp/tweet.json")
   tweetobj = json.load(tweetfile)
   print(tweetobj['user']['screen_name'])     #  twitterapi
   ~~~
+  
+  ## Creating a JSON file 
+
+  TK
+
 ---
 
 
-## TK
-
-Testing out highlighting
-
-~~~py
-print(json.loads('{"a": 42, "b": "dog"}'))  # {'a': 42, 'b': 'dog'}
-
-### convenience method load()
-tweetfile = open("/tmp/tweet.json")
-tweetobj = json.load(tweetfile)
-print(tweetobj['user']['screen_name'])     #  twitterapi
-~~~
 
 ## Parsing a Tweet
 

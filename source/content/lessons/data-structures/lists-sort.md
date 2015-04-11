@@ -5,43 +5,58 @@ references:
   - url: https://wiki.python.org/moin/HowTo/Sorting
 tldr: |
 
+  ## Non-mutable sort
   ~~~py
-  ### Using sorted(), which returns a list
-  arr = [9, 42, 5]
   tup = (8, -50, 104)
-  print(sorted(arr))
-  # => [5, 9, 42]
-  print(sorted(tup))
-  # => [-50, 8, 104]
+  sorted(tup)                    #  [-50, 8, 104]
+  list(reversed(sorted(tup)))    #  [104, 8, -50]  
+  ~~~
 
-  ### in-place sort using sort()
-  print(arr)
-  # => [9, 42, 5]
+  ## The `sort()` method for lists
+  ~~~py
+  arr = ['d', 'A', 'z']
   arr.sort()
-  print(arr)
-  # => [5, 9, 42]
-  tup.sort()
-  # => AttributeError: 'tuple' object has no attribute 'sort'
-
-  ### Sorting by key
-  a = ('Apple', 'aloe')
-  print(sorted(a))
-  # => ['Apple', 'aloe']
-  print(sorted(a, key = str.lower))
-  # => ['aloe', 'Apple']
-  b = ['1100', '5', '42']
-  b.sort()
-  print(b)
-  # => ['1100', '42', '5']
-  b.sort(key = int)
-  print(b)
-  # => ['5', '42', '1100']
+  print(arr)             # ['A', 'd', 'z']
+  arr.reverse()
+  print(arr)             # ['z', 'd', 'A']
   ~~~
 ---
 
 
 
+~~~py
 
+### Using sorted(), which returns a list
+arr = [9, 42, 5]
+tup = (8, -50, 104)
+print(sorted(arr))
+# => [5, 9, 42]
+print(sorted(tup))
+# => [-50, 8, 104]
+
+### in-place sort using sort()
+print(arr)
+# => [9, 42, 5]
+arr.sort()
+print(arr)
+# => [5, 9, 42]
+tup.sort()
+# => AttributeError: 'tuple' object has no attribute 'sort'
+
+### Sorting by key
+a = ('Apple', 'aloe')
+print(sorted(a))
+# => ['Apple', 'aloe']
+print(sorted(a, key = str.lower))
+# => ['aloe', 'Apple']
+b = ['1100', '5', '42']
+b.sort()
+print(b)
+# => ['1100', '42', '5']
+b.sort(key = int)
+print(b)
+# => ['5', '42', '1100']
+~~~
 
 
 
