@@ -1,6 +1,7 @@
 import json
 import os.path
 import tweepy
+import requests
 
 def tweepy_client(credsfile):
     """
@@ -44,4 +45,23 @@ def send_tweet(txt, credsfile):
     """
     t = tweepy_client(credsfile)
     resp = t.update_status(status = txt)
-    return resp
+    return resp._json
+
+
+def get_wikipedia_url_for_word(word):
+    """
+    contacts Wikipedia's API to see if an article with {word}.capitalize() exists
+    Returns wikipedia URL with {word} as title if it does exist
+     or None if not
+
+    note: this method is pretty sloppy and assumes word is just a single word with
+      all alphabet letters
+    """
+    wend_point = "http://en.wikipedia.org/w/api.php?format=json&action=query&prop=info&titles="
+    title = word.capitalize()
+    resp = requests.get(wend_point + title).json()
+    if resp['query']['pages'].get('-1'):
+        return None
+    else:
+        return "http://en.wikipedia.org/wiki/%s" % title
+

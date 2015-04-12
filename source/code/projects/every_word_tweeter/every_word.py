@@ -1,4 +1,5 @@
-from tweeter import send_tweet, get_latest_timeline_tweet_text
+from apis import send_tweet, get_latest_timeline_tweet_text
+from apis import get_wikipedia_url_for_word
 from words import create_words_file, find_next_wordline
 import json
 import logging
@@ -32,11 +33,14 @@ def create_next_tweet_text(tweet_txt, words_filename):
         word = seq[0].upper()
         tx = "appearances" if int(seq[1]) > 1 else 'appearance'
         new_tweet =  TWEET_TEMPLATE % (word, seq[1], tx)
+        w_url = get_wikipedia_url_for_word(word)
+        if w_url:
+            new_tweet += "\n" + w_url
 
     return new_tweet
 
 
-def dotweet():
+def dotweet(testing = False):
     """
     Downloads and creates Biblical word count (WORDS_FILE) if necessary.
     Gets latest tweet from a given account (TWITTER_SCREEN_NAME)
@@ -59,12 +63,17 @@ def dotweet():
     else:
         logger.info("Tweeting: \"%s\"" % next_tweet)
         # send the tweet
-        resp = send_tweet(next_tweet, credsfile = TWITTER_CREDS)
-        return resp
+        if testing == True:
+            return next_tweet
+        else:
+            resp = send_tweet(next_tweet, credsfile = TWITTER_CREDS)
+            return resp
 
 
 if __name__ == "__main__":
     resp = dotweet()
-    if resp:
-        j = json.dumps(resp._json, indent = 2)
+    if type(resp) is dict:
+        j = json.dumps(resp, indent = 2)
         print(j)
+    else:
+        print(resp)
