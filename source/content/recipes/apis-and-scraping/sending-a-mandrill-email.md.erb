@@ -1,0 +1,71 @@
+---
+title: Sending a Email Using Mandrill
+ordernum: 5202
+references:
+  - title: "Mandrill API Documentation - Python"
+    url: https://mandrillapp.com/api/docs/index.python.html
+  - title: "Mandrill API Endpoint: /messages/send.json"
+    url: https://mandrillapp.com/api/docs/messages.python.html
+---
+
+
+Once you've created an account, go to the [Account Settings page](https://mandrillapp.com/settings). Click the __+ Add API Key__ button at the bottom of the page.
+
+This will create a new entry in the __API Keys__ table. Highlight and copy the key string to paste into your script.
+
+![img](/files/images/apis/mandrill-settings-api-key.png)
+
+
+
+The basics:
+
+Note that the `to:` value has to be a __list__ of __dict__ objects, even if you're only sending to one recipient. Each __dict__ specifies not only the target email address, but how the name of the recipient should look, and whether it's a `to`, `bcc`, or `cc`-type of message.
+
+~~~py
+import mandrill
+MANDRILL_API_KEY = 'YOUR_API_KEY'
+mandrill_client = mandrill.Mandrill(MANDRILL_API_KEY)
+message = { 'from_email': 'you@email.com',
+  'from_name': 'Yourself',
+  'to': [{
+    'email': 'dansonguyen@gmail.com',
+    'name': 'Whoever',
+    'type': 'to'
+   }],
+  'subject': "Testing out Mandrill",
+  'text': 'This is a message from Mandrill'
+}
+
+result = mandrill_client.messages.send(message = message)
+# result is a dict with metadata about the sent message, including
+# if it was successfully sent
+print(result)
+[{'_id': '94057836f5407bb92987aef025d6b4c',
+  'email': 'recipient@email.com',
+  'reject_reason': None,
+  'status': 'sent'}]
+~~~
+
+
+
+And this is what shows up in the recipient's inbox:
+
+![img](/files/images/apis/mandrill-gmail-result.png)
+
+
+
+The Mandrill dashboard:
+
+![img](/files/images/apis/mandrill-dashboard.png)
+
+
+
+## Sending an attachment
+
+### Base encode a file
+
+~~~py
+
+
+
+~~~

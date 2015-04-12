@@ -1,10 +1,30 @@
 ---
 title: "Immunization Levels in California Schools"
 ordernum: 1525
-description: Gathering data, opening excel files
+description: Gathering data, opening Excel files
+references:
+  - url: http://www.cdph.ca.gov/programs/immunize/pages/immunizationlevels.aspx
 ---
 
-<%= codepiece 'projects/cal_school_immunizations/download_files.py' %>
+### The immunizations site
+
+The [live site](http://stash.compjour.org/sites/www.cdph.ca.gov/programs/immunize/pages/immunizationlevels.html). 
+
+The [mirror site](http://www.cdph.ca.gov/programs/immunize/pages/immunizationlevels.aspx).
+
+Why make a mirror? Because the site may change its layout, or even remove files, in the next month or year. By making a mirror, I can have better assurances that this exercise will work in the future.
 
 
-<%= codepiece 'projects/cal_school_immunizations/extract_data.py' %>
+Mirror of the page was created with __wget__:
+
+~~~sh
+wget --recursive --page-requisites --convert-links \
+--level=1 --reject=pdf \
+http://www.cdph.ca.gov/programs/immunize/pages/immunizationlevels.aspx
+~~~
+
+
+<%= codepiece 'projects/cal_school_immunizations/download_excel_files.py' %>
+
+
+<%= codepiece 'projects/cal_school_immunizations/extract_data_from_excel.py' %>
