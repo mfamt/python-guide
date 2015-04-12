@@ -30,7 +30,9 @@ def get_latest_timeline_tweet_text(credsfile):
     Returns the latest text string from the authenticated user's
     timeline, or None if no tweet yet exists
     """
-    t = tweepy_client(credsfile).user_timeline(count = 1, trim_user = True)
+    t = tweepy_client(credsfile).user_timeline(count = 1, trim_user = True,
+        exclude_replies = True, include_rts = False
+    )
     if t[0]:
         return t[0].text
 

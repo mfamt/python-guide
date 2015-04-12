@@ -1,5 +1,5 @@
-import tweeter
-import words
+from tweeter import send_tweet, get_latest_timeline_tweet_text
+from words import create_words_file, find_next_wordline
 import json
 import logging
 import os.path
@@ -8,36 +8,32 @@ TWITTER_CREDS = "~/.behold.twittercreds.json"
 SOURCE_URL = 'http://www.gutenberg.org/cache/epub/10/pg10.txt'
 WORDS_FILENAME = "/tmp/biblewords.txt"
 
+TWEET_TEMPLATE = "Behold %s and its %s Biblical %s!\n👼🙏😇😇😇"
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger('beholdeveryword.everyword')
 
 
-def extract_beheld_word(txt):
-    """
-    From a standard "Behold" tweet, extracts the all-caps word
-    Returns extracted word, or None
-    """
-    m = re.search('(?<=Behold )[A-Z]+', txt)
-    return m.group() if m else None
-
-
-
 def create_next_tweet_text(tweet_txt, words_filename):
     """
-    tweet_txt is text from a tweet that looks like:
-       "Behold SOMEWORD and its 10 Biblical appearances"
-    Extracts the "SOMEWORD" word, whether or not it exists
-      and passes it to formulate_tweet_text
+    Expects TWEET_TEMPLATE to be a String
+    {tweet_txt} is a String. A regex is used to extract a particular
+       {word}, and this is passed into words.find_next_wordline() to
+       get the next [word, word_count] (e.g. {seq}) to tweet
 
-    Returns a text string or None, depending on find_next_wordline()
+    Returns a text string or None, depending on whether
+      find_next_wordline() returned {seq} or None
     """
-    w = extract_beheld_word(tweet_txt)
-    seq = words.find_next_wordline(current_word = w, words_filename = words_filename)
+    new_tweet = None
+    mtch = re.search('(?<=Behold )[A-Z]+', tweet_txt)
+    word = mtch.group() if mtch else None
+    seq = find_next_wordline(current_word = word, words_filename = words_filename)
     if seq is not None:
         word = seq[0].upper()
         tx = "appearances" if int(seq[1]) > 1 else 'appearance'
-        txt = "Behold %s and its %s Biblical %s!\n👼🙏😇😇😇" % (word, seq[1], tx)
-        return txt
+        new_tweet =  TWEET_TEMPLATE % (word, seq[1], tx)
+
+    return new_tweet
 
 
 def dotweet():
@@ -46,20 +42,24 @@ def dotweet():
     Gets latest tweet from a given account (TWITTER_SCREEN_NAME)
     Uses Tweepy to send a "Behold..." tweet
 
-    Returns response object
+    Returns response object or None
     """
-    words.create_words_file(source_url = SOURCE_URL, words_filename = WORDS_FILENAME,
+    create_words_file(source_url = SOURCE_URL, words_filename = WORDS_FILENAME,
         start_pt = '1:1', end_pt = 'END OF THE PROJECT GUTENBERG'
     )
-    tweet_text = tweeter.get_latest_timeline_tweet_text(credsfile = TWITTER_CREDS)
-    logger.info("Latest tweet: \"%s\"" % tweet_text)
+    # Note: If the latest tweet isn't of the expected "Behold..." format,
+    #   then the Twitter sequence will __start over__
+    tweet_text = get_latest_timeline_tweet_text(credsfile = TWITTER_CREDS)
+    logger.info("Latest tweet is: \"%s\"" % tweet_text)
+    # Now formulate the next tweet to send out
     next_tweet = create_next_tweet_text(tweet_text, WORDS_FILENAME)
     if next_tweet is None:
         logger.warning("Nothing to tweet")
+        return None
     else:
         logger.info("Tweeting: \"%s\"" % next_tweet)
         # send the tweet
-        resp = tweeter.send_tweet(next_tweet, credsfile = TWITTER_CREDS)
+        resp = send_tweet(next_tweet, credsfile = TWITTER_CREDS)
         return resp
 
 
