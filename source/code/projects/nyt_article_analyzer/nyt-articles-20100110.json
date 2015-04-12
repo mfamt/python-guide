@@ -1,0 +1,593 @@
+{
+  "copyright": "Copyright (c) 2013 The New York Times Company.  All Rights Reserved.",
+  "response": {
+    "docs": [
+      {
+        "news_desk": null,
+        "source": "The New York Times",
+        "document_type": "blogpost",
+        "_id": "4fd399778eb7c8105d8d5620",
+        "blog": [],
+        "word_count": 291,
+        "keywords": [
+          {
+            "name": "type_of_material",
+            "rank": "1",
+            "value": "News"
+          }
+        ],
+        "multimedia": [],
+        "pub_date": "2010-01-10T22:57:29Z",
+        "lead_paragraph": "Baltimore Ravens at Indianapolis Colts Saturday, 8:15 p.m. EasternTV: CBS",
+        "web_url": "http://fifthdown.blogs.nytimes.com/2010/01/10/afc-divisional-playoff-matchups/",
+        "subsection_name": null,
+        "snippet": "Previewing next weekend's A.F.C. divisional-round playoff matchups.",
+        "headline": {
+          "main": "A.F.C. Divisional Playoff Matchups",
+          "kicker": "The Fifth Down"
+        },
+        "abstract": "Previewing next weekend's A.F.C. divisional-round playoff matchups.",
+        "byline": {
+          "original": "By JUDY BATTISTA",
+          "person": [
+            {
+              "lastname": "BATTISTA",
+              "organization": "",
+              "role": "reported",
+              "rank": 1,
+              "firstname": "Judy"
+            }
+          ]
+        },
+        "print_page": null,
+        "type_of_material": "Blog",
+        "section_name": "Sports"
+      },
+      {
+        "news_desk": null,
+        "source": "The New York Times",
+        "document_type": "blogpost",
+        "_id": "4fd399238eb7c8105d8d48e9",
+        "blog": [],
+        "word_count": 263,
+        "keywords": [
+          {
+            "name": "type_of_material",
+            "rank": "1",
+            "value": "News"
+          }
+        ],
+        "multimedia": [],
+        "pub_date": "2010-01-10T22:50:12Z",
+        "lead_paragraph": "Arizona Cardinals at New Orleans SaintsSaturday, 4:30 p.m. EasternTV: Fox",
+        "web_url": "http://fifthdown.blogs.nytimes.com/2010/01/10/nfc-divisional-playoff-matchups/",
+        "subsection_name": null,
+        "snippet": "Previewing next weekend's N.F.C. divisional-round playoff matchups.",
+        "headline": {
+          "main": "N.F.C. Divisional Playoff Matchups",
+          "kicker": "The Fifth Down"
+        },
+        "abstract": "Previewing next weekend's N.F.C. divisional-round playoff matchups.",
+        "byline": {
+          "original": "By JUDY BATTISTA",
+          "person": [
+            {
+              "lastname": "BATTISTA",
+              "organization": "",
+              "role": "reported",
+              "rank": 1,
+              "firstname": "Judy"
+            }
+          ]
+        },
+        "print_page": null,
+        "type_of_material": "Blog",
+        "section_name": "Sports"
+      },
+      {
+        "news_desk": null,
+        "source": "The New York Times",
+        "document_type": "blogpost",
+        "_id": "4fd399298eb7c8105d8d49ba",
+        "blog": [],
+        "word_count": 95,
+        "keywords": [
+          {
+            "name": "type_of_material",
+            "rank": "1",
+            "value": "News"
+          }
+        ],
+        "multimedia": [],
+        "pub_date": "2010-01-10T22:48:22Z",
+        "lead_paragraph": "The founders built the House of Representatives to act. And throughout President Obama's first year, the House has acted.",
+        "web_url": "http://thecaucus.blogs.nytimes.com/2010/01/10/action-and-now-reaction/",
+        "subsection_name": null,
+        "snippet": "The founders built the House of Representatives to act. And throughout President Obama's first year, the House has acted.",
+        "headline": {
+          "main": "Action, and Now Reaction",
+          "kicker": "The Caucus"
+        },
+        "abstract": "The founders built the House of Representatives to act. And throughout President Obama's first year, the House has acted.",
+        "byline": {
+          "original": "By JOHN HARWOOD",
+          "person": [
+            {
+              "lastname": "HARWOOD",
+              "organization": "",
+              "role": "reported",
+              "rank": 1,
+              "firstname": "John"
+            }
+          ]
+        },
+        "print_page": null,
+        "type_of_material": "Blog",
+        "section_name": "U.S."
+      },
+      {
+        "news_desk": null,
+        "source": "The New York Times",
+        "document_type": "blogpost",
+        "_id": "4fd399398eb7c8105d8d4dbb",
+        "blog": [],
+        "word_count": 854,
+        "keywords": [
+          {
+            "name": "type_of_material",
+            "rank": "1",
+            "value": "News"
+          }
+        ],
+        "multimedia": [],
+        "pub_date": "2010-01-10T22:48:02Z",
+        "lead_paragraph": "Since the idea of the Knicks' David Lee making 20-foot jumpers no longer seems ludicrous, maybe it's time to reconsider another once-unthinkable notion: David Lee as an All-Star.",
+        "web_url": "http://offthedribble.blogs.nytimes.com/2010/01/10/is-david-lee-an-all-star-and-other-thoughts/",
+        "subsection_name": null,
+        "snippet": "Since the idea of the Knicks' David Lee making 20-foot jumpers no longer seems ludicrous, maybe it's time to reconsider another once-unthinkable notion: David Lee as an All-Star.",
+        "headline": {
+          "main": "Is David Lee an All-Star? (And Other Thoughts.)",
+          "kicker": "Off the Dribble"
+        },
+        "abstract": "Since the idea of the Knicks' David Lee making 20-foot jumpers no longer seems ludicrous, maybe it's time to reconsider another once-unthinkable notion: David Lee as an All-Star.",
+        "byline": {
+          "original": "By HOWARD BECK",
+          "person": [
+            {
+              "lastname": "BECK",
+              "organization": "",
+              "role": "reported",
+              "rank": 1,
+              "firstname": "Howard"
+            }
+          ]
+        },
+        "print_page": null,
+        "type_of_material": "Blog",
+        "section_name": "Sports"
+      },
+      {
+        "news_desk": null,
+        "source": "The New York Times",
+        "document_type": "blogpost",
+        "_id": "4fd399248eb7c8105d8d495e",
+        "blog": [],
+        "word_count": 991,
+        "keywords": [
+          {
+            "name": "type_of_material",
+            "rank": "1",
+            "value": "News"
+          }
+        ],
+        "multimedia": [],
+        "pub_date": "2010-01-10T22:19:59Z",
+        "lead_paragraph": "As White House and Congressional negotiators work toward an agreement on a final version of sweeping health care legislation, they seem likely to push the 10-year price tag closer to the $1.05 trillion cost of the House-passed bill while relying on new taxes proposed by the Senate, probably including a bigger increase in the Medicare payroll tax than currently proposed.",
+        "web_url": "http://prescriptions.blogs.nytimes.com/2010/01/10/a-higher-price-tag-enters-negotiations/",
+        "subsection_name": null,
+        "snippet": "As small teams of Congressional staff members work furiously to hash out the final differences between the two versions, Congressional leaders and White House officials are trying to navigate an increasingly difficult set of competing demands while...",
+        "headline": {
+          "main": "A Higher Price Tag Enters Negotiations",
+          "kicker": "Prescriptions"
+        },
+        "abstract": "As small teams of Congressional staff members work furiously to hash out the final differences between the two versions, Congressional leaders and White House officials are trying to navigate an increasingly difficult set of competing demands while also fulfilling President Obama's top goals",
+        "byline": {
+          "original": "By DAVID M. HERSZENHORN",
+          "person": [
+            {
+              "organization": "",
+              "role": "reported",
+              "rank": 1
+            }
+          ]
+        },
+        "print_page": null,
+        "type_of_material": "Blog",
+        "section_name": "Health"
+      },
+      {
+        "news_desk": "U.S.",
+        "source": "The New York Times",
+        "document_type": "multimedia",
+        "_id": "504a8ca41c22dfde670c4587",
+        "blog": [],
+        "word_count": "23",
+        "keywords": [
+          {
+            "is_major": "N",
+            "name": "subject",
+            "rank": "1",
+            "value": "Fish and Other Marine Life"
+          },
+          {
+            "is_major": "N",
+            "name": "organizations",
+            "rank": "2",
+            "value": "Agriculture Department"
+          },
+          {
+            "is_major": "N",
+            "name": "glocations",
+            "rank": "3",
+            "value": "Florida"
+          },
+          {
+            "is_major": "N",
+            "name": "subject",
+            "rank": "4",
+            "value": "Weather"
+          },
+          {
+            "is_major": "N",
+            "name": "subject",
+            "rank": "5",
+            "value": "Fish Farming"
+          }
+        ],
+        "multimedia": [
+          {
+            "width": 190,
+            "url": "images/2010/01/10/us/0110FISH-B.JPG",
+            "type": "image",
+            "height": 126,
+            "legacy": {
+              "wide": "images/2010/01/10/us/0110FISH-B.JPG",
+              "widewidth": "190",
+              "wideheight": "126"
+            },
+            "subtype": "wide"
+          },
+          {
+            "width": 75,
+            "url": "images/2010/01/10/us/0110FISH-S.JPG",
+            "type": "image",
+            "height": 75,
+            "legacy": {
+              "thumbnailwidth": "75",
+              "thumbnail": "images/2010/01/10/us/0110FISH-S.JPG",
+              "thumbnailheight": "75"
+            },
+            "subtype": "thumbnail"
+          }
+        ],
+        "pub_date": "2010-01-10T22:05:01Z",
+        "lead_paragraph": "In Florida\u2019s agricultural core, there swims another harvest that has suffered more than any other because of a long cold snap: tropical fish.",
+        "web_url": "http://www.nytimes.com/slideshow/2010/01/10/us/0110FISH_index.html",
+        "subsection_name": null,
+        "snippet": "In Florida\u2019s agricultural core, there swims another harvest that has suffered more than any other because of a long cold snap: tropical fish.",
+        "headline": {
+          "main": "A Withering Harvest in Florida"
+        },
+        "abstract": null,
+        "byline": null,
+        "print_page": null,
+        "type_of_material": "Slideshow",
+        "section_name": "U.S."
+      },
+      {
+        "news_desk": "World",
+        "source": "The New York Times",
+        "document_type": "multimedia",
+        "_id": "504a8c861c22dfde670c44d0",
+        "blog": [],
+        "word_count": "17",
+        "keywords": [
+          {
+            "is_major": "N",
+            "name": "glocations",
+            "rank": "1",
+            "value": "Balkan States"
+          },
+          {
+            "is_major": "N",
+            "name": "subject",
+            "rank": "2",
+            "value": "International Relations"
+          },
+          {
+            "is_major": "N",
+            "name": "glocations",
+            "rank": "3",
+            "value": "Serbia"
+          },
+          {
+            "is_major": "N",
+            "name": "glocations",
+            "rank": "4",
+            "value": "Macedonia"
+          },
+          {
+            "is_major": "N",
+            "name": "glocations",
+            "rank": "5",
+            "value": "Montenegro"
+          },
+          {
+            "is_major": "N",
+            "name": "glocations",
+            "rank": "6",
+            "value": "Kosovo"
+          },
+          {
+            "is_major": "N",
+            "name": "glocations",
+            "rank": "7",
+            "value": "Bosnia and Herzegovina"
+          }
+        ],
+        "multimedia": [
+          {
+            "width": 190,
+            "url": "images/2010/01/10/world/0110TRAIN-B.JPG",
+            "type": "image",
+            "height": 126,
+            "legacy": {
+              "wide": "images/2010/01/10/world/0110TRAIN-B.JPG",
+              "widewidth": "190",
+              "wideheight": "126"
+            },
+            "subtype": "wide"
+          },
+          {
+            "width": 75,
+            "url": "images/2010/01/10/world/0110TRAIN-S.JPG",
+            "type": "image",
+            "height": 75,
+            "legacy": {
+              "thumbnailwidth": "75",
+              "thumbnail": "images/2010/01/10/world/0110TRAIN-S.JPG",
+              "thumbnailheight": "75"
+            },
+            "subtype": "thumbnail"
+          }
+        ],
+        "pub_date": "2010-01-10T21:35:02Z",
+        "lead_paragraph": "The famous train line from Sarajevo to Belgrade was disrupted during the Balkan conflict in the 1990s.",
+        "web_url": "http://www.nytimes.com/slideshow/2010/01/10/world/0110TRAIN_index.html",
+        "subsection_name": null,
+        "snippet": "The famous train line from Sarajevo to Belgrade was disrupted during the Balkan conflict in the 1990s.",
+        "headline": {
+          "main": "Train From Sarajevo to Belgrade Revived"
+        },
+        "abstract": null,
+        "byline": null,
+        "print_page": null,
+        "type_of_material": "Slideshow",
+        "section_name": "World"
+      },
+      {
+        "news_desk": "Sports / Pro Football",
+        "source": "The New York Times",
+        "document_type": "multimedia",
+        "_id": "504a8ca41c22dfde670c4586",
+        "blog": [],
+        "word_count": "30",
+        "keywords": [
+          {
+            "is_major": "N",
+            "name": "subject",
+            "rank": "1",
+            "value": "Football"
+          },
+          {
+            "is_major": "N",
+            "name": "organizations",
+            "rank": "2",
+            "value": "Arizona Cardinals"
+          },
+          {
+            "is_major": "N",
+            "name": "organizations",
+            "rank": "3",
+            "value": "Green Bay Packers"
+          },
+          {
+            "is_major": "N",
+            "name": "subject",
+            "rank": "4",
+            "value": "Playoff Games"
+          }
+        ],
+        "multimedia": [
+          {
+            "width": 190,
+            "url": "images/2010/01/10/sports/football/20100110SPTSCARDS-B.JPG",
+            "type": "image",
+            "height": 126,
+            "legacy": {
+              "wide": "images/2010/01/10/sports/football/20100110SPTSCARDS-B.JPG",
+              "widewidth": "190",
+              "wideheight": "126"
+            },
+            "subtype": "wide"
+          },
+          {
+            "width": 75,
+            "url": "images/2010/01/10/sports/football/20100110SPTSCARDS-S.JPG",
+            "type": "image",
+            "height": 75,
+            "legacy": {
+              "thumbnailwidth": "75",
+              "thumbnail": "images/2010/01/10/sports/football/20100110SPTSCARDS-S.JPG",
+              "thumbnailheight": "75"
+            },
+            "subtype": "thumbnail"
+          }
+        ],
+        "pub_date": "2010-01-10T21:25:01Z",
+        "lead_paragraph": "A shootout between quarterbacks -- the highest-scoring playoff game in N.F.L. history -- ended with a score by the defense as the Arizona Cardinals defeated the Green Bay Packers, 51-45.",
+        "web_url": "http://www.nytimes.com/slideshow/2010/01/10/sports/football/20100110SPTSCARDS_index.html",
+        "subsection_name": "Pro Football",
+        "snippet": "A shootout between quarterbacks -- the highest-scoring playoff game in N.F.L. history -- ended with a score by the defense as the Arizona Cardinals defeated the Green Bay Packers, 51-45.",
+        "headline": {
+          "main": "Cardinals Beat Packers in Overtime"
+        },
+        "abstract": null,
+        "byline": null,
+        "print_page": null,
+        "type_of_material": "Slideshow",
+        "section_name": "Sports"
+      },
+      {
+        "news_desk": "Sports / Pro Football",
+        "source": "The New York Times",
+        "document_type": "multimedia",
+        "_id": "504a8c901c22dfde670c44ef",
+        "blog": [],
+        "word_count": "23",
+        "keywords": [
+          {
+            "is_major": "N",
+            "name": "subject",
+            "rank": "1",
+            "value": "Football"
+          },
+          {
+            "is_major": "N",
+            "name": "organizations",
+            "rank": "2",
+            "value": "Baltimore Ravens"
+          },
+          {
+            "is_major": "N",
+            "name": "organizations",
+            "rank": "3",
+            "value": "New England Patriots"
+          },
+          {
+            "is_major": "N",
+            "name": "subject",
+            "rank": "4",
+            "value": "Playoff Games"
+          }
+        ],
+        "multimedia": [
+          {
+            "width": 190,
+            "url": "images/2010/01/10/sports/football/20100110SPTSPATS-B.JPG",
+            "type": "image",
+            "height": 126,
+            "legacy": {
+              "wide": "images/2010/01/10/sports/football/20100110SPTSPATS-B.JPG",
+              "widewidth": "190",
+              "wideheight": "126"
+            },
+            "subtype": "wide"
+          },
+          {
+            "width": 75,
+            "url": "images/2010/01/10/sports/football/20100110SPTSPATS-S.JPG",
+            "type": "image",
+            "height": 75,
+            "legacy": {
+              "thumbnailwidth": "75",
+              "thumbnail": "images/2010/01/10/sports/football/20100110SPTSPATS-S.JPG",
+              "thumbnailheight": "75"
+            },
+            "subtype": "thumbnail"
+          }
+        ],
+        "pub_date": "2010-01-10T20:25:01Z",
+        "lead_paragraph": "The Ravens put the Patriots on their heels from the game's first play and never looked back in a convincing A.F.C. wild-card win.",
+        "web_url": "http://www.nytimes.com/slideshow/2010/01/10/sports/football/20100110SPTSPATS_index.html",
+        "subsection_name": "Pro Football",
+        "snippet": "The Ravens put the Patriots on their heels from the game's first play and never looked back in a convincing A.F.C. wild-card win.",
+        "headline": {
+          "main": "Photo Replay: Ravens Beat Patriots"
+        },
+        "abstract": null,
+        "byline": null,
+        "print_page": null,
+        "type_of_material": "Slideshow",
+        "section_name": "Sports"
+      },
+      {
+        "news_desk": "Automobiles / Collectible Cars",
+        "source": "The New York Times",
+        "document_type": "multimedia",
+        "_id": "504a8c901c22dfde670c453f",
+        "blog": [],
+        "word_count": "19",
+        "keywords": [
+          {
+            "is_major": "N",
+            "name": "subject",
+            "rank": "1",
+            "value": "Automobiles"
+          },
+          {
+            "is_major": "N",
+            "name": "subject",
+            "rank": "2",
+            "value": "Collectors and Collections"
+          }
+        ],
+        "multimedia": [
+          {
+            "width": 190,
+            "url": "images/2010/01/10/automobiles/collectibles/20100110-corvair-B.JPG",
+            "type": "image",
+            "height": 126,
+            "legacy": {
+              "wide": "images/2010/01/10/automobiles/collectibles/20100110-corvair-B.JPG",
+              "widewidth": "190",
+              "wideheight": "126"
+            },
+            "subtype": "wide"
+          },
+          {
+            "width": 75,
+            "url": "images/2010/01/10/automobiles/collectibles/20100110-corvair-S.JPG",
+            "type": "image",
+            "height": 75,
+            "legacy": {
+              "thumbnailwidth": "75",
+              "thumbnail": "images/2010/01/10/automobiles/collectibles/20100110-corvair-S.JPG",
+              "thumbnailheight": "75"
+            },
+            "subtype": "thumbnail"
+          }
+        ],
+        "pub_date": "2010-01-10T19:25:01Z",
+        "lead_paragraph": "Craig Pursley's search for a car like the one he drove as a teenager led to a surprising discovery.",
+        "web_url": "http://www.nytimes.com/slideshow/2010/01/10/automobiles/collectibles/20100110-corvair_index.html",
+        "subsection_name": "Collectible Cars",
+        "snippet": "Craig Pursley's search for a car like the one he drove as a teenager led to a surprising discovery.",
+        "headline": {
+          "main": "Reunited With a Lost Corvair"
+        },
+        "abstract": null,
+        "byline": null,
+        "print_page": null,
+        "type_of_material": "Slideshow",
+        "section_name": "Automobiles"
+      }
+    ],
+    "meta": {
+      "offset": 0,
+      "hits": 498,
+      "time": 186
+    }
+  },
+  "status": "OK"
+}

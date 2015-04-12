@@ -11,7 +11,7 @@ def brief_codepiece(fpath, opts = {})
 end
 
 def codepiece(fpath, opts = {})
-  fname = File.join("code/", fpath)
+  fname = File.join("/code/", fpath)
   raw_content = get_raw_content_from_file(fname)
   splits = raw_content.split(/^# ----$/)
   if splits.count > 1

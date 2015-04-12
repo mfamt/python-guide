@@ -5,9 +5,49 @@ description: Use the NYT's Article Search API and find interesting things about 
 ---
 
 
+## Set up the API call
+
+Refer [to the NYT docs](http://developer.nytimes.com/docs/read/article_search_api_v2)
+
 <%=
-codepiece('projects/nyt_article_analyzer/api_article_fetcher.py') 
+codepiece('projects/nyt_article_analyzer/get_api_key.py') 
+%>
+
+
+<%=
+codepiece('projects/nyt_article_analyzer/get_nyt_articles.py') 
+%>
+
+
+### Results format
+
+<%=
+brief_codepiece('projects/nyt_article_analyzer/nyt-articles-20100110.json') 
 %>
 
 
 
+<%=
+codepiece('projects/nyt_article_analyzer/get_nyt_articles_on_day.py') 
+%>
+
+
+### Get a list of days
+
+<%= 
+codepiece('projects/nyt_article_analyzer/day_sequencer.py') 
+%>
+
+
+
+## All together
+
+After a day's worth of articles have been gathered, save them to a timestamped file, e.g. `data-hold/nyt-articles/20140722.json`
+
+At some point, the program will crash because it will hit the rate limit of 10,000 calls per day (i.e. 100,000 article records).
+
+When the program is run again, it will skip existing data files.
+
+<%= 
+codepiece('projects/nyt_article_analyzer/get_nyt_articles_over_range.py') 
+%>
