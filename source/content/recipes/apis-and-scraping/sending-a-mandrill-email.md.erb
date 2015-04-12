@@ -28,7 +28,7 @@ mandrill_client = mandrill.Mandrill(MANDRILL_API_KEY)
 message = { 'from_email': 'you@email.com',
   'from_name': 'Yourself',
   'to': [{
-    'email': 'dansonguyen@gmail.com',
+    'email': 'whoever@gmail.com',
     'name': 'Whoever',
     'type': 'to'
    }],
@@ -65,7 +65,70 @@ The Mandrill dashboard:
 ### Base encode a file
 
 ~~~py
+import mandrill
+import requests
+from base64 import b64encode
 
+imgurl = 'http://python.mfamt.org/files/images/pics/hoover-tower-fog.jpg'
+img = requests.get(imgurl)
+imgdata = b64encode(img.content)
 
-
+## Now formulate the message
+import mandrill
+MANDRILL_API_KEY = 'YOUR_API_KEY'
+mandrill_client = mandrill.Mandrill(MANDRILL_API_KEY)
+message = { 'from_email': 'you@email.com',
+  'from_name': 'Yourself',
+  'to': [{
+    'email': 'someone@email.com',
+    'name': 'Whoever',
+    'type': 'to'
+   }],
+  'subject': "Sending you a pic of Stanford campus",
+  'html': "<p>Here's a photo of the <a href='https://www.flickr.com/photos/zokuga/15138926354/'>Stanford campus</a>",
+  'attachments': [{'name': 'stanfordimage.jpg',
+    'type': 'image/jpeg',
+    'content': imgdata    
+  }]
+}
+result = mandrill_client.messages.send(message = message)
+print(result)
+# [{'_id': '08sa8Ea6b4e1e2b5ea1679jQJA341',
+#  'email': 'someone@email.com',
+#  'status': 'queued'}]
 ~~~
+
+### Asynchronous sending
+
+By default, when you send a message with an attachment, the message is delivered _asynchronously_. For our purposes, this means that the result of `mandrill_client.messages.send(message = message)` is received _before_ the message is actually sent. Which is why `result['status']` above is `queued`.
+
+To get an update on the message's status, we have to call the Mandrill API a second time, using the `messages.info` method and passing the `id` of the recently sent message. Since `result` is a __list__ of __dict__ objects, we pass in `result[0]['_id']`:
+
+~~~py
+# Wait a few seconds, get the result
+mandrill_client.messages.info(id = result[0]['_id'])
+~~~
+
+The result is another `dict` object. Looks like our message successfully sent:
+
+~~~json
+{'_id': '08sa8Ea6b4e1e2b5ea1679jQJA341',
+ 'clicks': 0,
+ 'clicks_detail': [],
+ 'email': 'someone@email.com',
+ 'opens': 0,
+ 'opens_detail': [],
+ 'resends': [],
+ 'sender': 'you@email.com',
+ 'smtp_events': [],
+ 'state': 'sent',
+ 'subject': 'Sending you a pic of Stanford campus',
+ 'tags': [],
+ 'template': None,
+ 'ts': 1428401091}
+~~~
+
+Result:
+
+![img](/files/images/apis/mandrill-gmail-embed.png)
+
