@@ -6,6 +6,9 @@ references:
     url: https://www.twilio.com/docs/python/install
 ---
 
+Twilio is a cloud service that provides a bridge between software and the world of phones and text messaging. In short, Twilio makes it easy to write scripts to send and receive phone calls and text messages.
+
+In this tutorial, we'll go over the steps to sign up with Twilio and send a text message with Python. 
 
 ## Sign up with Twilio
 

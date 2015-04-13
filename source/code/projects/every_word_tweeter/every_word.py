@@ -1,5 +1,5 @@
 from apis import send_tweet, get_latest_timeline_tweet_text
-from apis import get_wikipedia_url_for_word
+from apis import get_wikipedia_url_for_word, get_biblehub_url_for_word
 from words import create_words_file, find_next_wordline
 import json
 import logging
@@ -9,10 +9,10 @@ TWITTER_CREDS = "~/.behold.twittercreds.json"
 SOURCE_URL = 'http://www.gutenberg.org/cache/epub/10/pg10.txt'
 WORDS_FILENAME = "/tmp/biblewords.txt"
 
-TWEET_TEMPLATE = "Behold %s and its %s Biblical %s!\n👼🙏😇😇😇"
+TWEET_TEMPLATE = "Behold %s and its %s Biblical %s!\n👼🙏😇"
 
 logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger('beholdeveryword.everyword')
+logger = logging.getLogger('beholdeveryword.every_word')
 
 
 def create_next_tweet_text(tweet_txt, words_filename):
@@ -33,9 +33,14 @@ def create_next_tweet_text(tweet_txt, words_filename):
         word = seq[0].upper()
         tx = "appearances" if int(seq[1]) > 1 else 'appearance'
         new_tweet =  TWEET_TEMPLATE % (word, seq[1], tx)
+        ## attempt to add BibleHub link
+        b_url = get_biblehub_url_for_word(word)
+        if b_url:
+            new_tweet += "\nBibleHub: " + b_url
+        ## attempt to add Wikipedia link
         w_url = get_wikipedia_url_for_word(word)
         if w_url:
-            new_tweet += "\n" + w_url
+            new_tweet += "\nWikipedia: " + w_url
 
     return new_tweet
 

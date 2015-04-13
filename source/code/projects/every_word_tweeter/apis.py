@@ -1,7 +1,12 @@
 import json
+import logging
 import os.path
 import tweepy
 import requests
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger('beholdeveryword.apis')
+
 
 def tweepy_client(credsfile):
     """
@@ -64,4 +69,18 @@ def get_wikipedia_url_for_word(word):
         return None
     else:
         return "http://en.wikipedia.org/wiki/%s" % title
+
+def get_biblehub_url_for_word(word):
+    """
+    Given {word} like "Abel"
+      creates the biblehub.com topic URL:
+       e.g. http://biblehub.com/topical/a/abel.html
+      and checks to see if it exists (i.e. has a HTTP status of 200)
+
+      Returns the biblehub.com URL or None
+    """
+    slug = word.lower()
+    url = 'http://biblehub.com/topical/%s/%s.htm' % (slug[0], slug)
+    resp = requests.head(url)
+    return url if resp.status_code == 200 else None
 
