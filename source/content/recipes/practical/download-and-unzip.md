@@ -38,6 +38,8 @@ zf.close()
 
 Why go through the process of naming a temporary file?
 
+(Note: This code is borked on Windows. Read on)
+
 ~~~py
 from urllib.request import urlopen
 from tempfile import NamedTemporaryFile
@@ -64,6 +66,29 @@ with urlopen(zipurl) as zipresp, NamedTemporaryFile() as tfile:
     tfile.seek(0)
     unpack_archive(tfile.name, '/tmp/mystuff3', format = 'zip')
 ~~~
+
+
+### Windows and `NamedTemporaryFile`
+
+Unfortunately, `NamedTemporaryFile` [does not work as intended on Windows](https://bugs.python.org/issue14243). In the above example, `NamedTemporaryFile()` must be invoked with the `delete = False` option. Normally, by default, this option is `True`, and _closing_ the temporary file will delete it. Hence, `delete = False` pretty much kills the major motive for using a temporary file that can be assumed to be deleted upon close. 
+
+So if you're on Windows, this is how you modify the code above:
+
+~~~py
+from urllib.request import urlopen
+from tempfile import NamedTemporaryFile
+from shutil import unpack_archive
+from os import remove
+zipurl = 'http://stash.compjour.org/data/1800ssa.zip'
+tfile = NamedTemporaryFile(delete = False)
+with urlopen(zipurl) as zipresp:
+    tfile.write(zipresp.read())
+    tfile.close()
+    unpack_archive(tfile.name, '/tmp/mystuff3', format = 'zip')
+
+remove(tfile.name)
+~~~
+
 
 
 ## Unzipping without saving the zip

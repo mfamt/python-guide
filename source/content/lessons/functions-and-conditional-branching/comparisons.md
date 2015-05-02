@@ -2,7 +2,7 @@
 title: Comparisons
 ordernum: 320
 references:
-  url: https://docs.python.org/3/reference/expressions.html#not-in
+  - url: https://docs.python.org/3/reference/expressions.html#not-in
 tldr: |
   ## Comparisons
 
