@@ -1,9 +1,13 @@
 import csv
 import json
+import os.path
 import re
 from glob import glob
+from os import makedirs
 from xlrd import open_workbook
-XLS_DIR = "./data-hold/xls"
+XLS_DIR = "./data-hold/xls/immunization"
+FINISHED_DIR = './data-hold/finished'
+
 pre_2012_headers = ['school_code', 'county', 'school_type', 'district_code', 'school_name',
 'enrollment', 'uptodate_num', 'uptodate_pct', 'conditional_num', 'conditional_pct',
 'pme_num', 'pme_pct', 'pbe_num', 'pbe_pct', 'dtp_num', 'dtp_pct', 'polio_num',
@@ -16,9 +20,11 @@ post_2012_headers = ['school_code', 'county', 'school_type', 'district_name', 'c
 # differences between pre/post 2012:
 #  post-2012 only records 2-dose MMR, e.g. `mmr2_num` and `mmr2_pct`
 
+makedirs(XLS_DIR, exist_ok = True)
+makedirs(FINISHED_DIR, exist_ok = True)
 
 data = []
-for xlsname in glob(XLS_DIR + '/*.xls*'):
+for xlsname in glob(os.path.join(XLS_DIR, '*.xls*')):
     # extract the year numbers from the file name
     # e.g. "2006" and "2007" from "K--2006-2007.xls"
     yr_1, yr_2 = re.search('(\d{4})-(\d{4})', xlsname).groups()
@@ -40,16 +46,16 @@ for xlsname in glob(XLS_DIR + '/*.xls*'):
 print("There are", len(data), 'data rows all together')
 
 # write a JSON
-jname = "data-hold/k-immune.json"
+jname = os.path.join(FINISHED_DIR, 'k-immune.json')
 print("Writing to JSON:", jname)
 with open(jname, "w") as jfile:
     jfile.write(json.dumps(data, indent = 4))
 
 
 # write a CSV
-cname = 'data-hold/k-immune.csv'
+cname = os.path.join(FINISHED_DIR, 'k-immune.csv')
 print("Writing to CSV:", cname)
-writer = csv.DictWriter(open(cname, 'w'),
+writer = csv.DictWriter(open(cname, 'w', encoding = 'utf-8'),
    fieldnames = set(pre_2012_headers + post_2012_headers + ['year']),
    delimiter=','
 )

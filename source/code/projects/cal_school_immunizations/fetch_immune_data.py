@@ -6,14 +6,14 @@ from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 from os import makedirs
 
-XLS_DIR = "./data-hold/xls"
+XLS_DIR = "./data-hold/xls/immunization"
 INDEX_URL = 'http://stash.compjour.org/sites/www.cdph.ca.gov/programs/immunize/pages/immunizationlevels.html'
 # Alternatively, for the current live site:
 # INDEX_URL = "http://www.cdph.ca.gov/programs/immunize/pages/immunizationlevels.aspx"
 makedirs(XLS_DIR, exist_ok = True)
 # Download the HTML listing
-response = urlopen(INDEX_URL)
-soup = BeautifulSoup(response.read())
+response = requests.get(INDEX_URL)
+soup = BeautifulSoup(response.text)
 all_urls = [a['href'] for a in soup.find_all('a') if a.attrs.get('href')]
 for url in all_urls:
     # just get Kindergarten spreadsheet URLs
